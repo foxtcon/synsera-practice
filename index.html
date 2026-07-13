@@ -14,7 +14,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  html,body{overflow-x:hidden;max-width:100%}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}img{max-width:100%;height:auto}body.noscroll{overflow:hidden;touch-action:none}
+  html,body{overflow-x:hidden;max-width:100%}main,.pane,.topbar,.fwheel,.bflow{max-width:100%}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}img{max-width:100%;height:auto}body.noscroll{overflow:hidden;touch-action:none}
   a{color:inherit;text-decoration:none}
   /* ===== SIDEBAR ===== */
   .side{position:fixed;top:0;left:0;bottom:0;width:274px;background:var(--navy);color:#c2ced7;display:flex;flex-direction:column;z-index:50}
@@ -346,7 +346,7 @@
   @keyframes rise{from{transform:translateY(6px)}to{transform:none}}
   /* Practice FAQ / Fox: hub chrome (navy, cream, red CTA; azure sparingly) */
   @media(prefers-reduced-motion:reduce){.chatwin.on{animation:none}.chatfab:after{animation:none}}
-  .chatfab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));right:calc(24px + env(safe-area-inset-right,0px));z-index:70;display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;border:1px solid rgba(58,168,224,.35);border-radius:10px;padding:11px 16px 11px 12px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 10px 28px rgba(13,27,42,.28);transition:background .15s,border-color .15s}
+  .chatfab{position:fixed;bottom:max(16px,calc(24px + env(safe-area-inset-bottom,0px)));right:max(16px,calc(24px + env(safe-area-inset-right,0px)));z-index:70;display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;border:1px solid rgba(58,168,224,.35);border-radius:10px;padding:11px 16px 11px 12px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 10px 28px rgba(13,27,42,.28);transition:background .15s,border-color .15s}
   .chatfab:hover{background:var(--navy2);border-color:var(--azure-l)}
   .chatfab .fabic{display:inline-flex;width:28px;height:28px;border-radius:8px;background:rgba(58,168,224,.18);border:1px solid rgba(58,168,224,.28);align-items:center;justify-content:center;flex:none}
   .chatfab .fabic svg{width:18px;height:18px;display:block}.chathead .chav svg{width:20px;height:20px}
@@ -385,13 +385,14 @@
   .barr b{display:block;font-size:20px;color:var(--azure);line-height:1}
   .barr span{font-size:10.5px;color:var(--muted)}
   /* flywheel pills: use .fw.comp (not .fw.free) to avoid .free class collisions */
-  .fwheel{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px;row-gap:8px}
-  .fw{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:34px;padding:0 14px;background:#fff;border:1px solid var(--line);border-radius:20px;font-size:12.5px;font-weight:700;line-height:1;color:var(--navy);white-space:nowrap}
+  .fwheel{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px;row-gap:8px;max-width:100%}
+  .fw{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:34px;padding:0 14px;background:#fff;border:1px solid var(--line);border-radius:20px;font-size:12.5px;font-weight:700;line-height:1;color:var(--navy);white-space:nowrap;max-width:100%}
   .fw.comp{background:#E7F7ED;border-color:#bfe6cd;color:#1a7a52}
   .fw.hot{background:#FCEEEC;border-color:#f3cdc6;color:#B31604}
   .fwsep{display:inline-flex;align-items:center;justify-content:center;flex:none;width:14px;height:34px;color:var(--muted);font-weight:800;font-size:16px;line-height:1}
-  .fwloop{display:flex;align-items:center;gap:11px;margin-top:12px;background:#EAF4FB;border:1px solid #c7e2f3;border-radius:12px;padding:13px 16px;font-size:13px;color:var(--navy)}
-  .fwloop .lp{font-size:24px;color:var(--azure);line-height:1}
+  .fwloop{display:flex;align-items:flex-start;gap:11px;margin-top:12px;background:#EAF4FB;border:1px solid #c7e2f3;border-radius:12px;padding:13px 16px;font-size:13px;color:var(--navy);max-width:100%}
+  .fwloop>span:last-child{min-width:0;flex:1}
+  .fwloop .lp{font-size:24px;color:var(--azure);line-height:1;flex:none}
   .chatchips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;border-top:1px solid var(--line);background:#fff}
   .chatchips button{font:inherit;font-size:11.5px;font-weight:600;color:var(--ink);background:linear-gradient(180deg,#fff,var(--soft));border:1px solid #f0ddd6;border-radius:9px;padding:6px 11px;cursor:pointer;transition:background .12s,color .12s,border-color .12s}
   .chatchips button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
@@ -437,7 +438,7 @@
   /* ===== RESPONSIVE: tablet / iPad / phone ===== */
   .mobtop{display:none;align-items:center;gap:12px;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top,0px));background:var(--navy);color:#fff;position:sticky;top:0;z-index:60}
   .mobtop .mtitle{font-weight:800;font-style:italic;font-size:20px}
-  .mobtop .mbtn{margin-left:auto;font:inherit;font-size:13px;font-weight:700;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 14px;cursor:pointer;min-height:44px;min-width:44px}
+  .mobtop .mbtn{margin-left:auto;font:inherit;font-size:13px;font-weight:700;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px 14px;cursor:pointer;min-height:44px;min-width:44px;position:relative;z-index:90;-webkit-tap-highlight-color:transparent}
   .sideback{display:none}
 
   @media(max-width:1100px){
@@ -458,7 +459,7 @@
     .sideback.on{display:block}
     .topbar{padding:10px 16px;flex-wrap:wrap;gap:6px 10px}
     .topbar .tag{display:none}
-    .pane{padding:22px 16px 96px;max-width:100%}
+    .pane{padding:22px 16px 96px;max-width:100%;overflow-x:clip}
     h1{font-size:clamp(26px,7vw,34px);letter-spacing:-.5px}
     h2{font-size:clamp(22px,5.5vw,26px)}
     p.lead{font-size:15.5px}
@@ -475,7 +476,7 @@
     .sfhero{font-size:clamp(24px,6.5vw,30px)}
     .freenote{flex-wrap:wrap;border-radius:14px}
     .ctas .btn{flex:1 1 auto;text-align:center;min-height:44px}
-    .chatfab{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:calc(16px + env(safe-area-inset-right,0px))}
+    .chatfab{bottom:max(16px,calc(16px + env(safe-area-inset-bottom,0px)));right:max(16px,calc(16px + env(safe-area-inset-right,0px)))}
     .chatwin{bottom:0;right:0;left:0;width:100%;height:min(92dvh,640px);max-height:92dvh;border-radius:14px 14px 0 0;border-left:none;border-right:none;border-bottom:none;padding-bottom:env(safe-area-inset-bottom,0px)}
     .fxbg{display:none}
     .nitem{padding:11px 12px;min-height:44px}
@@ -488,6 +489,8 @@
     .tier b{font-size:14px;flex:none}.tier span{margin-top:0;font-size:11px;text-align:right}
     .stt b{font-size:22px}
     .bflow{flex-direction:column}.barr b{transform:rotate(90deg)}
+    .fw{height:auto;min-height:34px;padding:8px 12px;white-space:normal;text-align:center;line-height:1.25}
+    .fwsep{height:auto;align-self:center}
     .chatfab .fabtx{display:none}
     .chatfab{padding:0;width:52px;height:52px;justify-content:center;border-radius:12px}
     .chatfab:after{border-radius:15px}
@@ -498,10 +501,14 @@
     .pf{font-size:11.5px;min-height:58px;padding:10px 8px}
   }
 
-  @media(max-width:380px){
-    .pane{padding:18px 12px 96px}
+  @media(max-width:390px){
+    .pane{padding:18px 12px 110px}
     .mobtop{padding-left:12px;padding-right:12px}
     h1{font-size:24px}
+    .pill-g,.usa,.stagecards,.g3,.g2,.whatsnew-grid,.statrow,.tiers,.roles,.vcards,.pflow,.ind{grid-template-columns:1fr}
+    .fwheel{gap:4px;row-gap:6px}
+    .fw{font-size:12px;padding:8px 10px}
+    .fwsep{width:10px;font-size:14px}
   }
 
   @media(min-width:901px) and (max-width:1100px){
@@ -722,8 +729,8 @@
     if(RICH[id])return richPanel(RICH[id]);
     return '';
   }
-  function closeMenu(){document.querySelector('.side').classList.remove('open');const sb=document.getElementById('sideback');sb.classList.remove('on');sb.setAttribute('aria-hidden','true');document.body.classList.remove('noscroll');const mb=document.getElementById('menubtn');if(mb){mb.setAttribute('aria-expanded','false');mb.textContent='Menu';}}
-  function openMenu(){document.querySelector('.side').classList.add('open');const sb=document.getElementById('sideback');sb.classList.add('on');sb.setAttribute('aria-hidden','false');document.body.classList.add('noscroll');const mb=document.getElementById('menubtn');if(mb){mb.setAttribute('aria-expanded','true');mb.textContent='Close';}}
+  function closeMenu(){document.querySelector('.side').classList.remove('open');const sb=document.getElementById('sideback');sb.classList.remove('on');sb.setAttribute('aria-hidden','true');document.body.classList.remove('noscroll');const mb=document.getElementById('menubtn');if(mb){mb.setAttribute('aria-expanded','false');mb.setAttribute('aria-label','Open menu');mb.textContent='Menu';}}
+  function openMenu(){document.querySelector('.side').classList.add('open');const sb=document.getElementById('sideback');sb.classList.add('on');sb.setAttribute('aria-hidden','false');document.body.classList.add('noscroll');const mb=document.getElementById('menubtn');if(mb){mb.setAttribute('aria-expanded','true');mb.setAttribute('aria-label','Close menu');mb.textContent='Close';}}
   document.getElementById('menubtn').addEventListener('click',()=>{const s=document.querySelector('.side');if(s.classList.contains('open'))closeMenu();else openMenu();});
   document.getElementById('sideback').addEventListener('click',closeMenu);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeP();closeDoc();}});
