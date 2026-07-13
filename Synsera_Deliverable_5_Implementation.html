@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Implementation Delivery (Sample)</title><style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#1B1F24;background:#eef1f4;line-height:1.5}
+.page{max-width:960px;margin:24px auto;background:#fff;box-shadow:0 6px 30px rgba(20,32,45,.12);border-radius:6px;overflow:hidden}
+.bar{background:linear-gradient(120deg,#16202B,#3a1a12);color:#fff;padding:26px 40px;border-bottom:4px solid #F7941D;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.brand{font-size:22px;font-weight:800;font-style:italic}.brand b{color:#F7941D;font-style:normal}
+.bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
+.body{padding:28px 40px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+.lead{font-size:14px;color:#3a4656}
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:6px}.ring2{text-align:center}.ring2 .r{width:92px;height:92px;border-radius:50%;margin:0 auto 7px;display:flex;align-items:center;justify-content:center}.ring2 .r i{width:66px;height:66px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#16202B;font-style:normal}.ring2 .l{font-size:11.5px;color:#4a5a75;font-weight:600}
+.gates{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.gate{flex:1;min-width:120px;border:1px solid #E7E9EC;border-radius:11px;padding:14px;text-align:center;font-size:12px;font-weight:600}.gate .g{width:26px;height:26px;border-radius:50%;background:#25845F;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 7px;font-size:13px}.gate.pending{opacity:.7}.gate.pending .g{background:#c7ccd2}
+.timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#dfe4ea}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#25845F;border:3px solid #fff;box-shadow:0 0 0 1px #dfe4ea}.tl.pending .node{background:#c7ccd2}.tl b{font-size:12px;display:block;text-align:center}.tl span{font-size:10.5px;color:#7d8ca3;display:block;text-align:center}
+.callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
+.samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
+.note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
+.foot{padding:18px 40px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:100%}}
+</style></head><body>
+<div class="page">
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Implementation Delivery Status</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 7 &middot; Implementation</div></div>
+<div class="body">
+<p class="lead">Senior-led build against the approved architecture. VJ, Principal Architect, assures every phase as Technical Project Lead, with no hand-off. Status as of the current week.</p>
+<h2>Progress by pillar</h2>
+<div class="rings">
+<div class="ring2"><div class="r" style="background:conic-gradient(#25845F 0 100%,#EEF1F6 0)"><i>100%</i></div><div class="l">Identity</div></div>
+<div class="ring2"><div class="r" style="background:conic-gradient(#F7941D 0 72%,#EEF1F6 72% 100%)"><i>72%</i></div><div class="l">Data</div></div>
+<div class="ring2"><div class="r" style="background:conic-gradient(#F7941D 0 58%,#EEF1F6 58% 100%)"><i>58%</i></div><div class="l">SecOps</div></div>
+<div class="ring2"><div class="r" style="background:conic-gradient(#25845F 0 88%,#EEF1F6 88% 100%)"><i>88%</i></div><div class="l">Endpoints</div></div>
+<div class="ring2"><div class="r" style="background:conic-gradient(#C0392B 0 45%,#EEF1F6 45% 100%)"><i>45%</i></div><div class="l">AI governance</div></div>
+</div>
+<h2>Quality gates</h2>
+<div class="gates"><div class="gate"><div class="g">&#10003;</div>Mobilize</div><div class="gate"><div class="g">&#10003;</div>Build</div><div class="gate"><div class="g">&#10003;</div>Validate</div><div class="gate pending"><div class="g">4</div>Go-Live</div><div class="gate pending"><div class="g">5</div>Hypercare</div><div class="gate pending"><div class="g">6</div>Transition</div></div>
+<h2>Milestones</h2>
+<div class="timeline">
+<div class="tl"><div class="node"></div><b>CA baseline live</b><span>MFA, legacy auth blocked, PIM</span></div>
+<div class="tl"><div class="node"></div><b>Sentinel live</b><span>Connectors &amp; detections</span></div>
+<div class="tl pending"><div class="node"></div><b>Labels &amp; DLP</b><span>Rollout underway</span></div>
+<div class="tl pending"><div class="node"></div><b>Agent ID</b><span>In progress</span></div>
+</div>
+<div class="callout"><strong>On completion:</strong> implemented controls, configuration runbooks, and knowledge transfer, all inside your own tenant. <strong>Next step:</strong> optional Managed service and MDR.</div>
+<p class="note">Weekly status is available live in the partner portal as it ships. Detailed build steps are delivered inside the engagement.</p>
+</div>
+<div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
+</div></body></html>

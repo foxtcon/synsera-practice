@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><style>
+@page{size:A4;margin:9mm 12mm}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Arial,Helvetica,sans-serif;color:#1B1F24;line-height:1.4}
+:root{--red:#D81E05;--red2:#B31604;--orange:#F7941D;--ink:#16202B;--slate:#5A6470;--muted:#8A929C;--line:#E7E9EC;--soft:#FBF4F1;--soft2:#F7F8FA;--navy:#16202B}
+.top{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--red);padding-bottom:9px}
+.slogo{display:flex;align-items:center;gap:6px}.slogo .w{font-size:20px;font-weight:800;color:var(--red);font-style:italic;letter-spacing:-.5px}
+.top .pr{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);font-weight:700}
+.top .rt{margin-left:auto;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);font-weight:700;margin-top:12px}
+h1{font-size:27px;font-weight:800;letter-spacing:-.5px;margin-top:2px;color:var(--ink)}
+.subh{font-size:11px;color:var(--slate);margin-top:2px}
+.sample{display:inline-block;font-size:8px;letter-spacing:1px;text-transform:uppercase;color:var(--orange);border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
+.introbox{background:var(--navy);color:#fff;border-radius:10px;padding:11px 15px;margin-top:8px;display:flex;gap:16px;align-items:center}
+.introbox p{font-size:10.5px;line-height:1.5;color:#d7dde3;flex:1}
+.introbox .big{text-align:center;flex:none;border-left:1px solid rgba(255,255,255,.15);padding-left:16px}
+.introbox .big b{font-size:26px;color:var(--orange);font-weight:800;display:block;line-height:1}
+.introbox .big .l{font-size:8px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--red);border-radius:4px;padding:2px 7px;display:inline-block;margin-top:5px}
+.introbox .big .c{font-size:8.5px;color:#aab4bd;margin-top:5px}
+.sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);font-weight:800;margin:10px 0 6px}
+.takeaways{background:var(--soft);border-left:3px solid var(--orange);border-radius:8px;padding:11px 14px}
+.takeaways div{font-size:10px;line-height:1.5;color:var(--slate);margin-bottom:4px}
+.takeaways div:last-child{margin-bottom:0}.takeaways b{color:var(--ink)}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.c{border:1px solid var(--line);border-radius:8px;padding:11px 13px}
+.c .h{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:5px}
+.c p{font-size:9.5px;color:var(--slate);line-height:1.45}
+.c .rec{font-size:9px;color:var(--red2);font-style:italic;margin-top:5px;line-height:1.4}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.p{border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+.p .tag{font-size:8px;font-weight:800;letter-spacing:.5px;color:#fff;background:var(--ink);border-radius:4px;padding:2px 6px;display:inline-block;margin-bottom:5px}
+.p .nm{font-size:11px;font-weight:800;color:var(--ink)}
+.p .ml{font-size:8.5px;color:var(--muted);margin:1px 0 3px}
+.p .st{font-size:9.5px;color:var(--ink);line-height:1.3}
+.p .no{font-size:8.5px;color:var(--red2);font-style:italic;margin-top:3px;line-height:1.3}
+.foot{display:flex;font-size:8px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-top:11px;border-top:1px solid var(--line);padding-top:7px}
+.foot .r{margin-left:auto}
+/* page 2 */
+.ladder{display:flex;gap:6px}
+.ls{flex:1;border:1px solid var(--line);border-radius:8px;padding:9px 8px;text-align:center}
+.ls.cur{border:1.5px solid var(--red);background:var(--soft)}
+.ls .num{width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 4px}
+.ls.cur .num{background:var(--red)}
+.ls b{font-size:9.5px;color:var(--ink);display:block;line-height:1.1}
+.ls span{font-size:8px;color:var(--muted);display:block;margin-top:3px}
+.bar{height:11px;background:var(--soft2);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:7px 0 4px;position:relative}
+.bar i{display:block;height:100%;width:45%;background:linear-gradient(90deg,var(--orange),var(--red))}
+.mcra{display:flex;gap:14px;align-items:center}
+.circle{width:74px;height:74px;border-radius:50%;background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+.circle b{font-size:22px;font-weight:800;line-height:1}.circle span{font-size:8px;letter-spacing:.5px}
+.hcbox{border:1.5px solid var(--red);border-radius:10px;padding:13px 15px;margin-top:8px}
+.hcbox .lb{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--ink);border-radius:5px;padding:3px 8px;display:inline-block;margin-bottom:7px}
+.hcbox h3{font-size:15px;color:var(--ink);margin-bottom:8px}
+.hccols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hccols .t{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:5px}
+.hccols li{font-size:9.5px;color:var(--slate);line-height:1.4;list-style:none;padding-left:12px;position:relative;margin-bottom:3px}
+.hccols li:before{content:"\2022";color:var(--red);position:absolute;left:0}
+.hcmeta{font-size:9px;color:var(--ink);margin-top:9px;line-height:1.5}.hcmeta b{color:var(--red2)}
+.hcmeta .i{color:var(--slate);font-style:italic}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}
+.cards3 .c b{font-size:10px;color:var(--ink);display:block;margin-bottom:3px}
+.cards3 .c p{font-size:9px}
+.nextbox{background:var(--soft);border:1px solid #f3d5b8;border-radius:9px;padding:12px 15px;margin-top:9px}
+.nextbox h3{font-size:13px;color:var(--ink);margin-bottom:6px}
+.nextbox p{font-size:9.5px;color:var(--slate);line-height:1.5}.nextbox b{color:var(--ink)}
+.ready{font-size:9.5px;color:var(--slate);line-height:1.5;border-left:3px solid var(--orange);padding-left:11px;margin-top:9px}.ready b{color:var(--ink)}
+</style></head><body>
+
+<!-- PAGE 1 -->
+<div class="top">
+  <span class="slogo"><span class="w">synsera</span><svg width="38" height="24" viewBox="0 0 72 40"><path d="M6 18 C 28 16, 50 11, 70 4 C 52 15, 32 22, 12 25 Z" fill="#F26522"/><path d="M11 28 C 30 28, 50 23, 67 14 C 52 25, 34 33, 15 34 Z" fill="#D81E05"/></svg></span>
+  <span class="pr">Microsoft Security Practice</span>
+  <span class="rt">Confidential</span>
+</div>
+<div class="eyebrow">Microsoft Security Readiness Profile &middot; Pre-Health Check</div>
+<h1>Northbridge Insurance <span class="sample">Illustrative sample</span></h1>
+<div class="subh">Financial Services &amp; Insurance &middot; Prepared following the Stage 0 session</div>
+
+<div class="introbox">
+  <p>This profile captures what we heard in today's session so nothing is lost before the Health Check. In a 60-minute working session we score your environment across the nine MCRA pillars, and you walk away with a written Security Readiness Summary your leadership can use.</p>
+  <div class="big"><b>9</b><span class="l">Pillars scanned</span><div class="c">33 capabilities in the Health Check</div></div>
+</div>
+
+<div class="sec">Key takeaways</div>
+<div class="takeaways">
+  <div><b>Primary focus:</b> mature security posture, audit readiness, fewer incidents, license ROI, and safe AI adoption.</div>
+  <div><b>Licensing:</b> E5 with the E5 Security add-on, partially deployed. Microsoft Sentinel is licensed but not yet enabled, usually the fastest quick win.</div>
+  <div><b>AI posture:</b> Microsoft Copilot in pilot. Guardrails still to be set before a broad rollout.</div>
+  <div><b>Compliance drivers:</b> ISO 27001, SOC 2, and GDPR.</div>
+  <div><b>Decision:</b> Health Check agreed on the call. UK morning slot, within the next week or two.</div>
+</div>
+
+<div class="sec">Session summary</div>
+<div class="cards2">
+  <div class="c"><div class="h">Strategic priorities</div><p>Maturing the program: audit readiness, fewer incidents, and more value from the licensing already owned. No hard deadline, but the team wants to move sooner rather than later.</p><div class="rec">Recommendation: get more from the Microsoft licensing you already own before buying anything new.</div></div>
+  <div class="c"><div class="h">Microsoft estate</div><p>E5 with the E5 Security add-on, partially deployed. Hybrid identity across on-prem Active Directory and Entra ID. Secure Score tracked from the console.</p><div class="rec">Recommendation: confirm exact SKUs and licensing depth at the Health Check.</div></div>
+  <div class="c"><div class="h">Security stack</div><p>Microsoft at the core with third-party pieces around it. Open to consolidating where Microsoft already covers the need, as contracts allow.</p><div class="rec">Recommendation: map active versus dormant capabilities before recommending anything new.</div></div>
+  <div class="c"><div class="h">Health Check logistics</div><p>Global admins identified. UK morning works best for the team. NDAs are in place, and we do not need tenant access to schedule.</p><div class="rec">Recommendation: next week or two. Send times and the session books the same day.</div></div>
+</div>
+
+<div class="sec">Nine-pillar snapshot</div>
+<div class="pillars">
+  <div class="p"><span class="tag">ID</span><div class="nm">Identity &amp; Access</div><div class="ml">MFA coverage</div><div class="st">All users, mandated</div><div class="no">Conditional Access partially enforced</div></div>
+  <div class="p"><span class="tag">EP</span><div class="nm">Endpoints</div><div class="ml">EDR posture</div><div class="st">Defender for Endpoint</div><div class="no">Intune enrolment in progress</div></div>
+  <div class="p"><span class="tag">AW</span><div class="nm">Apps &amp; Workloads</div><div class="ml">Email &amp; collaboration</div><div class="st">Defender for Office 365</div><div class="no">Legacy filter to retire</div></div>
+  <div class="p"><span class="tag">DA</span><div class="nm">Data &amp; Governance</div><div class="ml">Sensitivity labelling</div><div class="st">Purview enabled, not enforced</div><div class="no">Classification on the roadmap</div></div>
+  <div class="p"><span class="tag">IN</span><div class="nm">Infrastructure</div><div class="ml">Cloud posture</div><div class="st">Defender for Cloud</div><div class="no">Coverage under review</div></div>
+  <div class="p"><span class="tag">NW</span><div class="nm">Network</div><div class="ml">Secure access</div><div class="st">Legacy VPN in place</div><div class="no">Open to Global Secure Access</div></div>
+  <div class="p"><span class="tag">SO</span><div class="nm">Security Operations</div><div class="ml">SIEM &amp; SOC</div><div class="st">Sentinel licensed, not deployed</div><div class="no">Fastest quick win</div></div>
+  <div class="p"><span class="tag">AI</span><div class="nm">AI &amp; Copilot</div><div class="ml">GenAI posture</div><div class="st">Copilot in pilot</div><div class="no">Guardrails still maturing</div></div>
+  <div class="p"><span class="tag">PC</span><div class="nm">People &amp; Compliance</div><div class="ml">Frameworks</div><div class="st">ISO 27001, SOC 2, GDPR</div><div class="no">Compliance Manager not yet in use</div></div>
+</div>
+
+<div class="foot"><span>Readiness Profile &middot; Page 1 of 2 &middot; Confidential</span><span class="r">Synsera Microsoft Security Practice</span></div>
+
+<div style="page-break-before:always"></div>
+
+<!-- PAGE 2 -->
+<div class="top">
+  <span class="slogo"><span class="w">synsera</span><svg width="38" height="24" viewBox="0 0 72 40"><path d="M6 18 C 28 16, 50 11, 70 4 C 52 15, 32 22, 12 25 Z" fill="#F26522"/><path d="M11 28 C 30 28, 50 23, 67 14 C 52 25, 34 33, 15 34 Z" fill="#D81E05"/></svg></span>
+  <span class="pr">Microsoft Security Practice</span>
+  <span class="rt">Confidential</span>
+</div>
+
+<div class="cards2" style="margin-top:12px">
+  <div class="c">
+    <div class="h">Engagement path</div>
+    <p style="margin-bottom:8px;font-weight:700;color:var(--ink);font-size:11px">The Microsoft Security Practice ladder</p>
+    <div class="ladder">
+      <div class="ls cur"><div class="num">0</div><b>Pre-Health Check</b><span>You are here</span></div>
+      <div class="ls"><div class="num">1</div><b>Health Check</b><span>60 min + Summary</span></div>
+      <div class="ls"><div class="num">2</div><b>Envision</b><span>If it fits</span></div>
+      <div class="ls"><div class="num">3</div><b>Assessment+</b><span>As needed</span></div>
+    </div>
+    <div class="rec" style="margin-top:7px">Each stage earns the next, through Architecture, Implementation, and Managed. Go only as far as it fits.</div>
+  </div>
+  <div class="c">
+    <div class="h">License activation</div>
+    <p style="margin-bottom:4px;font-weight:700;color:var(--ink);font-size:11px">Licensed vs activated</p>
+    <p>Most organisations own more Microsoft security than they actually run. Turning on what you already pay for is usually the fastest win.</p>
+    <p style="margin-top:6px"><b style="color:var(--ink)">License tier:</b> E5 (full suite), E5 Security add-on</p>
+    <div class="bar"><i></i></div>
+    <p><b style="color:var(--ink)">Your estimate:</b> partially deployed (illustrative)</p>
+  </div>
+</div>
+
+<div class="sec">MCRA scope</div>
+<div class="mcra">
+  <div class="circle"><b>33</b><span>capabilities</span></div>
+  <p style="font-size:10px;color:var(--slate);line-height:1.5">Your 60-minute Health Check scores <b style="color:var(--ink)">33 capabilities</b> across nine domains, aligned to the Microsoft Cybersecurity Reference Architecture, with a senior security architect. Identity, Endpoints, Apps &amp; Workloads, Data, Infrastructure, Network, Security Operations, AI &amp; Copilot, and People &amp; Compliance.</p>
+</div>
+
+<div class="hcbox">
+  <span class="lb">Prepared for Northbridge Insurance</span>
+  <h3>Stage 1 &middot; 60-minute MCRA Health Check</h3>
+  <div class="hccols">
+    <div>
+      <div class="t">What we do together</div>
+      <ul>
+        <li>Live executive scorecard during the session</li>
+        <li>Straight maturity scoring, not an audit</li>
+        <li>License realisation: what you own versus what is switched on</li>
+        <li>Priority Now / Next / Later path for leadership</li>
+      </ul>
+    </div>
+    <div>
+      <div class="t">What you receive after</div>
+      <ul>
+        <li>Written Security Readiness Summary (the Stage 1 deliverable)</li>
+        <li>One-page posture snapshot for your board</li>
+        <li>Per-pillar banding and priority gaps</li>
+        <li>Quick wins using existing Microsoft licensing</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hcmeta"><b>Proposed timing:</b> next week or two, UK morning to fit your team window. <b>Who to invite:</b> your security lead and global admins. <span class="i">We do not need access to anything to book this. Later stages happen only if they make sense for you.</span></div>
+</div>
+
+<div class="cards3">
+  <div class="c"><b>Visibility</b><p>A leadership-ready MCRA picture, not a product pitch.</p></div>
+  <div class="c"><b>License ROI</b><p>Surface the security you already pay for but have not switched on.</p></div>
+  <div class="c"><b>Evidence</b><p>A written Summary mapped to the Microsoft reference architecture.</p></div>
+</div>
+
+<div class="nextbox">
+  <h3>Clear next step: book your 60-minute MCRA Health Check</h3>
+  <p><b>Owner:</b> your Synsera engagement lead. Reply with your availability and the calendar invite goes out the same day. UK morning fits your team window.</p>
+  <p style="margin-top:4px"><b>Client owners:</b> confirm who is joining. Nothing else is needed from your side to get this booked.</p>
+</div>
+
+<div class="ready"><b>Ready to book?</b> The session includes your written Security Readiness Summary. We are vendor-neutral, and each stage earns the next.</div>
+
+<div class="foot"><span>Readiness Profile &middot; Page 2 of 2 &middot; Confidential</span><span class="r">Synsera Microsoft Security Practice</span></div>
+
+</body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Health Check - Security Readiness Summary (Sample)</title><style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:#1B1F24;background:#eef1f4;line-height:1.5}
+.page{max-width:960px;margin:24px auto;background:#fff;box-shadow:0 6px 30px rgba(20,32,45,.12);border-radius:6px;overflow:hidden}
+.bar{background:linear-gradient(120deg,#16202B,#3a1a12);color:#fff;padding:26px 40px;border-bottom:4px solid #F7941D;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+.brand{font-size:22px;font-weight:800;font-style:italic}.brand b{color:#F7941D;font-style:normal}
+.bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
+.body{padding:28px 40px}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+.lead{font-size:14px;color:#3a4656}
+.hero-metric{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.donut{width:130px;height:130px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.donut i{width:96px;height:96px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+.donut i b{font-size:30px;font-weight:800;color:#16202B;line-height:1}.donut i span{font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:#7d8ca3}
+.hbars{flex:1;min-width:320px}
+.hbar{display:flex;align-items:center;gap:11px;margin-bottom:9px}.hbar .l{flex:0 0 200px;font-size:12.5px;font-weight:600}.hbar .t{flex:1;height:13px;background:#EEF1F6;border-radius:7px;overflow:hidden}.hbar .f{display:block;height:100%;border-radius:7px;min-width:2px}.hbar .v{flex:0 0 30px;text-align:right;font-weight:800;font-size:12px}
+.crit{background:#C0392B}.dev{background:#E0A21C}.strong{background:#25845F}.tcrit{color:#C0392B}.tdev{color:#B9820A}.tstrong{color:#25845F}
+.vcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}.vc{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #C0392B}.vc .sc{font-size:26px;font-weight:800;color:#C0392B}.vc h4{font-size:13px;margin:2px 0 5px}.vc p{font-size:11.5px;color:#5a6675}
+.util{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}.utbar{flex:1;min-width:280px}.utbar .t{height:22px;background:#EEF1F6;border-radius:11px;overflow:hidden}.utbar .f{height:100%;background:linear-gradient(90deg,#F7941D,#D81E05);border-radius:11px;display:flex;align-items:center;justify-content:flex-end;color:#fff;font-size:11px;font-weight:800;padding-right:10px}
+.util .cap{font-size:12.5px;color:#3a4656}
+.callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
+.samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
+.note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
+.foot{padding:18px 40px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:100%}}
+</style></head><body>
+<div class="page">
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Security Readiness Summary</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 1 &middot; Health Check</div></div>
+<div class="body">
+<h2>Your overall posture</h2>
+<div class="hero-metric">
+<div class="donut" style="background:conic-gradient(#C0392B 0 43%,#EEF1F6 43% 100%)"><i><b>43</b><span>of 100</span></i></div>
+<div class="hbars">
+<div class="hbar"><span class="l">Identity &amp; Access</span><span class="t"><span class="f dev" style="width:55%"></span></span><span class="v tdev">55</span></div>
+<div class="hbar"><span class="l">Endpoints</span><span class="t"><span class="f dev" style="width:42%"></span></span><span class="v tdev">42</span></div>
+<div class="hbar"><span class="l">Apps &amp; Workloads</span><span class="t"><span class="f dev" style="width:60%"></span></span><span class="v tdev">60</span></div>
+<div class="hbar"><span class="l">Data &amp; Governance</span><span class="t"><span class="f crit" style="width:30%"></span></span><span class="v tcrit">30</span></div>
+<div class="hbar"><span class="l">Infrastructure</span><span class="t"><span class="f dev" style="width:46%"></span></span><span class="v tdev">46</span></div>
+<div class="hbar"><span class="l">Security Operations</span><span class="t"><span class="f crit" style="width:34%"></span></span><span class="v tcrit">34</span></div>
+<div class="hbar"><span class="l">Network</span><span class="t"><span class="f dev" style="width:41%"></span></span><span class="v tdev">41</span></div>
+<div class="hbar"><span class="l">AI &amp; Copilot</span><span class="t"><span class="f crit" style="width:24%"></span></span><span class="v tcrit">24</span></div>
+<div class="hbar"><span class="l">People &amp; Compliance</span><span class="t"><span class="f dev" style="width:50%"></span></span><span class="v tdev">50</span></div>
+</div></div>
+<p class="lead" style="margin-top:14px">Scored across the nine Microsoft Cybersecurity Reference Architecture domains. The weakest areas are AI, Data, and Security Operations, all of which you can strengthen on licensing you already own.</p>
+<h2>Your top three risks</h2>
+<div class="vcards">
+<div class="vc"><div class="sc">24</div><h4>AI &amp; Copilot</h4><p>Copilot piloted, agents ungoverned, no Purview AI controls. Fastest-growing risk surface.</p></div>
+<div class="vc"><div class="sc">30</div><h4>Data &amp; Governance</h4><p>No label taxonomy, DLP on email only, sensitive data location unknown.</p></div>
+<div class="vc"><div class="sc">34</div><h4>Security Operations</h4><p>No unified SIEM, fragmented consoles, no 24/7 coverage.</p></div>
+</div>
+<h2>Value already paid for</h2>
+<div class="util"><div class="utbar"><div class="t"><div class="f" style="width:38%">38% used</div></div></div><div class="cap">Northbridge uses about <b>38%</b> of the Microsoft security it already owns in E5. Purview, Sentinel, and Security Copilot are largely off.</div></div>
+<h2>Recommended path</h2>
+<div class="callout"><strong>Priority pillars:</strong> AI &amp; Copilot, Data Security, Security Operations.<br><strong>Next step:</strong> a Discovery session and Envisioning Workshop to turn this into a roadmap, then a scoped White Glove Assessment.</div>
+<p class="note">Directional, interview-based snapshot. A White Glove Assessment validates each finding control by control before implementation is scoped.</p>
+</div>
+<div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
+</div></body></html>
