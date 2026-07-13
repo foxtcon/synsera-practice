@@ -11,14 +11,17 @@ Target URL: https://synsera.foxtconsecurity.com
 ## What this is
 - **White-label delivery:** Synsera owns the client relationship and brand.
   Foxtcon One is the Microsoft Security delivery engine behind it.
-- **Program:** Pre-Health Check (~60 min) → interview-based Health Check
-  (45–60 min) → Discovery → Envisioning → White Glove Assessment →
-  Architecture → Implementation → optional Manage.
-- **Pipeline framing:** Project A (primary foot in the door; coming on board
-  shortly) and Project B (mid-market utilities-sector engagement; stable
-  Purview Data Map / Unified Catalog work, expanding into DLP and Risk
-  Management). Recommended mock delivery session with Synsera’s internal
-  team before Project A.
+- **Program:** Pre-Health Check (~60 min) and Health Check (45–60 min)
+  are complimentary; Discovery onward is scoped and paid under SOW through
+  Envisioning → White Glove Assessment → Architecture → Implementation →
+  optional Manage.
+- **Pipeline framing:** Project A (governance / Copilot readiness; Foxtcon can
+  run Health Check through Implementation under Synsera) and Project B
+  (Purview catalog foundations Foxtcon can extend into DLP / Insider Risk).
+  Synsera owns the clients; Foxtcon is the white-label delivery engine.
+  Optional mock session with Synsera’s internal team before live delivery.
+- **Start here path:** Welcome → Fit → Project A → Project B → Get started
+  (mock agenda). Sample client journey lives under The program.
 - **Client lift page:** Synsera-branded section ready to place on synsera.co.uk.
 
 ## Files
@@ -67,7 +70,9 @@ git push
 ## Editing notes
 - House style: no em dashes.
 - Delivery story: senior-led by VJ; certified specialists across the USA and
-  India; white-label to Synsera’s clients; day rate or fixed price under SOW.
+  India; white-label behind Synsera; Foxtcon can own Assessment→Implementation;
+  day rate or fixed price under SOW. Only Pre-Health Check and Health Check are
+  complimentary; do not imply the whole practice or later stages are free.
 - Microsoft claims: Entra Agent ID GA **April 2026**; unified Purview DSPM
   **May 2026**; Sentinel in Defender portal GA; Azure-portal Sentinel retires
   31 March 2027.
@@ -80,8 +85,8 @@ git push
 ## Useful hash links for Synsera
 - `#welcome` - partnership welcome
 - `#synfit` - fit with Synsera’s AI / Purview / agents offer
-- `#first` - Project A (primary practice footprint)
-- `#utilities` - Project B (utilities-sector; current + expansion)
+- `#first` - Project A (governance / Copilot readiness)
+- `#utilities` - Project B (catalog foundations → DLP / IRM)
 - `#site` - client-facing page lift
 - `#lifecycle` - eight-stage program
 - `#commercial` - billing and pipeline (day rate or fixed)
