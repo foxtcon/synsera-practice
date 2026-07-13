@@ -32,6 +32,7 @@ Target URL: https://synsera.foxtconsecurity.com
 - `Synsera_Deliverable_Discovery.html` - Discovery sample
 - `404.html` - redirects stray URLs back to the hub
 - `robots.txt` - Disallow all (partner-confidential)
+- `_headers` - Cloudflare Pages security headers (noindex, frame deny, etc.)
 - `CNAME` - synsera.foxtconsecurity.com
 
 Everything uses relative paths. Keep files in this folder layout.
@@ -52,11 +53,22 @@ live site in about 30 seconds.
 ### 2. DNS at IONOS
 - CNAME host `synsera` → your `*.pages.dev` hostname from Cloudflare
 
-### 3. Strongly recommended before sharing
+### 3. Strongly recommended before sharing (access control)
+
+This hub is partner-confidential. `noindex` / `robots.txt` / `_headers`
+reduce indexing and clickjacking risk, but they are **not** authentication.
+Do not treat a JavaScript password prompt as security.
+
+**Cloudflare Access (recommended):**
+1. Cloudflare Zero Trust → Access → Applications → Add an application → Self-hosted
+2. Application domain: `synsera.foxtconsecurity.com` (or your `*.pages.dev` host)
+3. Policy: Allow → include emails / email domains for Synsera and Foxtcon only
+4. Optional: require one-time PIN (email OTP) so no shared password is needed
+
+Also:
 - Keep the repo **private**
-- Add Cloudflare Access (email allow-list for Synsera and Foxtcon) so the hub
-  is not open to the public web
-- Pages already ship with `noindex` meta and `robots.txt`
+- Pages already ship with `noindex` meta, `robots.txt` (`Disallow: /`), and
+  `_headers` (X-Frame-Options, Referrer-Policy, Permissions-Policy, X-Robots-Tag)
 
 ### 4. Make changes
 ```
