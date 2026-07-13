@@ -6,55 +6,107 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
+.hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.util{flex:1;min-width:240px}.utbar .t{height:22px;background:#EEF1F6;border-radius:11px;overflow:hidden}
+.utbar .f{height:100%;width:38%;background:linear-gradient(90deg,#F7941D,#D81E05);border-radius:11px;display:flex;align-items:center;justify-content:flex-end;color:#fff;font-size:11px;font-weight:800;padding-right:10px;box-sizing:border-box}
+.util .cap{font-size:12.5px;color:#3a4656;margin-top:8px}
+.vcards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.vc{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #C0392B;height:100%}
+.vc .sc{font-size:26px;font-weight:800;color:#C0392B}.vc h4{font-size:13px;margin:2px 0 5px}.vc p{font-size:11.5px;color:#5a6675}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.box{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #1C86C9}
-.box.hot{border-top-color:#D81E05}.box h4{font-size:14px;margin-bottom:6px}.box p{font-size:12.5px;color:#5a6675}
+.box{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #1C86C9;height:100%}
+.box.hot{border-top-color:#D81E05}.box.in{border-top-color:#25845F}.box.out{border-top-color:#7d8ca3}
+.box h4{font-size:14px;margin-bottom:6px}.box p,.box li{font-size:12.5px;color:#5a6675}
+.box ul{margin:6px 0 0 16px}.box li{margin-bottom:4px}
 .nnl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
-.col{border:1px solid #E7E9EC;border-radius:10px;padding:14px}
+.col{border:1px solid #E7E9EC;border-radius:10px;padding:14px;height:100%}
 .ch{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;border-radius:4px;padding:3px 7px;display:inline-block;margin-bottom:8px}
 .col:nth-child(1) .ch{background:#D81E05}.col:nth-child(2) .ch{background:#F26522}.col:nth-child(3) .ch{background:#5A6470}
 .chip{font-size:12px;color:#3a4656;background:#F7F8FA;border-radius:6px;padding:6px 8px;margin-bottom:6px;display:block}
+.raci{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+.raci th{background:#16202B;color:#fff;text-align:left;padding:9px 10px;font-size:11px;letter-spacing:.4px;text-transform:uppercase}
+.raci td{border-bottom:1px solid #E7E9EC;padding:9px 10px;color:#3a4656;vertical-align:top}
+.raci tr:nth-child(even) td{background:#F7F8FA}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;border-radius:4px;padding:2px 6px}
+.tag.a{background:#fbf4f1;color:#D81E05}.tag.r{background:#E7F7ED;color:#1a7a52}.tag.c{background:#EEF1F6;color:#3a4656}.tag.i{background:#FFF7E6;color:#B9820A}
+.dlog{display:grid;gap:8px}.dl{display:flex;gap:12px;border:1px solid #E7E9EC;border-radius:10px;padding:12px 14px;align-items:flex-start}
+.dl .no{width:26px;height:26px;border-radius:8px;background:#16202B;color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.dl b{display:block;font-size:13px;color:#16202B}.dl span{font-size:12px;color:#5a6675}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-@media(max-width:700px){.grid,.nnl{grid-template-columns:1fr}.bar,.body,.foot{padding-left:20px;padding-right:20px}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
+  .grid,.nnl,.vcards,.hero{display:block!important}
   .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
-  .donut{margin:0 auto 16px}
   .meta{text-align:left!important}
   table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Discovery Outcomes</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 2 &middot; Discovery</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Discovery Outcomes</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 2 &middot; Discovery &middot; SOW</div></div>
 <div class="body">
-<h2>Business outcomes that matter</h2>
-<p class="lead">Discovery confirmed three board-level outcomes: safe Copilot and agent adoption, measurable reduction in data oversharing, and a clear path to unified detection and response. Microsoft E5 spend is already in place; the gap is activation and governance, not more licences.</p>
-<div class="grid">
-<div class="box hot"><h4>Priority A &middot; AI &amp; Copilot</h4><p>Agents and Copilot are in pilot without Agent ID, Agent 365 controls, or Purview DSPM for AI. Fastest-growing risk surface.</p></div>
-<div class="box hot"><h4>Priority B &middot; Data &amp; Governance</h4><p>No proportionate label taxonomy. DLP is email-only. Sensitive data location is incomplete for Copilot-safe rollout.</p></div>
-<div class="box"><h4>Priority C &middot; Security Operations</h4><p>Fragmented consoles. Sentinel not yet in the Defender portal. No 24/7 coverage model agreed.</p></div>
-<div class="box"><h4>Microsoft investment view</h4><p>E5 already funds Purview, Defender, and Sentinel foundations. Agent 365 or E7 may be needed for full agent governance; flagged for Envisioning.</p></div>
+<p class="lead">Paid consulting begins here. Discovery turns the Health Check snapshot (43/100 · ~38% E5 used) into scoped priorities, named stakeholders, and a clear SOW boundary before Envisioning and Assessment.</p>
+
+<h2>Carry-forward from Health Check</h2>
+<div class="hero">
+  <div class="util"><div class="utbar"><div class="t"><div class="f">38% used</div></div></div><div class="cap">Northbridge already owns the Microsoft security stack in E5. Discovery scopes activation and governance, not more licences as the default answer.</div></div>
 </div>
+<div class="vcards">
+  <div class="vc"><div class="sc">24</div><h4>AI &amp; Copilot</h4><p>Pilot without Agent ID / Purview AI controls. Fastest-growing surface.</p></div>
+  <div class="vc"><div class="sc">30</div><h4>Data &amp; Governance</h4><p>No proportionate label taxonomy; DLP email-only.</p></div>
+  <div class="vc"><div class="sc">34</div><h4>Security Operations</h4><p>Fragmented consoles; Sentinel not in Defender portal.</p></div>
+</div>
+
+<h2>Business outcomes that matter</h2>
+<div class="grid">
+  <div class="box hot"><h4>Priority A &middot; Safe Copilot &amp; agents</h4><p>Board wants Copilot productivity without oversharing. Guardrails before broad rollout.</p></div>
+  <div class="box hot"><h4>Priority B &middot; Measurable oversharing reduction</h4><p>Sensitive data location incomplete. Labels and DLP must become enforceable, not aspirational.</p></div>
+  <div class="box"><h4>Priority C &middot; Unified detection</h4><p>One investigation path in the Defender portal; path to 24/7 coverage agreed in principle.</p></div>
+  <div class="box"><h4>Microsoft investment view</h4><p>E5 funds Purview, Defender, Sentinel foundations. Agent 365 / E7 flagged for Envisioning if full agent governance is required.</p></div>
+</div>
+
+<h2>SOW boundary</h2>
+<div class="grid">
+  <div class="box in"><h4>In scope (this Discovery)</h4><ul><li>Outcome framing and priority pillars: AI, Data, SecOps</li><li>Stakeholder map and decision log</li><li>Workshop and Assessment recommendation</li><li>Licensing / funding eligibility checklist for Envisioning</li></ul></div>
+  <div class="box out"><h4>Out of scope (later SOWs)</h4><ul><li>Control-by-control evidence (Assessment)</li><li>Target-state design and ADRs (Architecture)</li><li>Build, runbooks, go-live (Implementation)</li><li>Managed MDR / QBR (Manage)</li></ul></div>
+</div>
+
+<h2>Stakeholders &amp; RACI (illustrative)</h2>
+<table class="raci">
+  <thead><tr><th>Workstream</th><th>Synsera</th><th>Foxtcon One</th><th>Northbridge</th></tr></thead>
+  <tbody>
+    <tr><td>Client relationship &amp; commercials</td><td><span class="tag a">A</span> Account lead</td><td><span class="tag c">C</span></td><td><span class="tag i">I</span> Sponsor</td></tr>
+    <tr><td>Discovery facilitation &amp; write-up</td><td><span class="tag c">C</span></td><td><span class="tag r">R</span> Principal Architect</td><td><span class="tag c">C</span> Security / IT</td></tr>
+    <tr><td>Priority &amp; SOW decisions</td><td><span class="tag a">A</span></td><td><span class="tag c">C</span></td><td><span class="tag a">A</span> Sponsor + CISO</td></tr>
+    <tr><td>Envisioning / funding path</td><td><span class="tag c">C</span></td><td><span class="tag r">R</span></td><td><span class="tag c">C</span> Microsoft CSM as needed</td></tr>
+  </tbody>
+</table>
+<p class="note" style="margin-top:6px">R = Responsible · A = Accountable · C = Consulted · I = Informed. White-label: client-facing work under Synsera; Foxtcon delivers Microsoft Security depth.</p>
+
+<h2>Decision log</h2>
+<div class="dlog">
+  <div class="dl"><div class="no">1</div><div><b>Priority pillars named: AI, Data, SecOps</b><span>Confirmed from Health Check weakest scores; Assessment will evidence these first.</span></div></div>
+  <div class="dl"><div class="no">2</div><div><b>Envisioning Workshop next, then White Glove Assessment</b><span>Microsoft-funded workshop where eligible; otherwise scoped data security / threat protection workshop under SOW.</span></div></div>
+  <div class="dl"><div class="no">3</div><div><b>No net-new licence purchase as the Discovery default</b><span>Activate E5 first. Agent 365 / E7 only if Envisioning proves a hard gap.</span></div></div>
+</div>
+
 <h2>Now, Next, Later</h2>
 <div class="nnl">
-<div class="col"><span class="ch">Now</span><span class="chip">Envisioning Workshop on secure AI and data plays</span><span class="chip">Confirm Microsoft funding eligibility</span><span class="chip">Name Assessment pillars: AI, Data, SecOps</span></div>
-<div class="col"><span class="ch">Next</span><span class="chip">White-glove Assessment on priority pillars</span><span class="chip">Architecture for labels, DLP, Agent ID</span><span class="chip">Sentinel-to-Defender migration plan</span></div>
-<div class="col"><span class="ch">Later</span><span class="chip">Managed detection and response option</span><span class="chip">Quarterly posture reviews</span><span class="chip">Expand to remaining MCRA pillars</span></div>
+  <div class="col"><span class="ch">Now</span><span class="chip">Envisioning Workshop on secure AI and data plays</span><span class="chip">Confirm Microsoft funding eligibility</span><span class="chip">Name Assessment pillars: AI, Data, SecOps</span></div>
+  <div class="col"><span class="ch">Next</span><span class="chip">White-glove Assessment on priority pillars</span><span class="chip">Architecture for labels, DLP, Agent ID</span><span class="chip">Sentinel-to-Defender migration plan</span></div>
+  <div class="col"><span class="ch">Later</span><span class="chip">Managed detection and response option</span><span class="chip">Quarterly posture reviews</span><span class="chip">Expand to remaining MCRA pillars</span></div>
 </div>
-<div class="callout"><strong>Recommended next step:</strong> Envisioning Workshop (Microsoft-funded where eligible), then a scoped White Glove Assessment on AI, Data, and Security Operations. Fee on Assessment credits against the build.</div>
-<p class="note">Illustrative Discovery outcome. Live engagements are scoped per Statement of Work after mutual NDA.</p>
+
+<div class="callout"><strong>Recommended next step:</strong> Envisioning Workshop (Microsoft-funded where eligible), then a scoped White Glove Assessment on AI, Data, and Security Operations. Assessment fee credits against the build.</div>
+<p class="note">Illustrative Discovery outcome under Synsera brand, delivered by Foxtcon One. Live engagements are scoped per Statement of Work after mutual NDA.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>

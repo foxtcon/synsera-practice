@@ -11,7 +11,7 @@ Target URL: https://synsera.foxtconsecurity.com
 ## What this is
 - **White-label delivery:** Synsera owns the client relationship and brand.
   Foxtcon One is the Microsoft Security delivery engine behind it.
-- **Program:** Pre-Health Check (~60 min) and Health Check (45–60 min)
+- **Program:** Pre-Health Check (~60 min) and Health Check (45-60 min)
   are complimentary; Discovery onward is scoped and paid under SOW through
   Envisioning → White Glove Assessment → Architecture → Implementation →
   optional Manage.

@@ -6,50 +6,79 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
 .diag{margin-top:8px}.diag .lay{display:flex;gap:10px;justify-content:center;margin-bottom:10px}.diag .bx{flex:1;font-size:12px;font-weight:700;background:#fbf4f1;border:1px solid #f0d9d4;border-radius:9px;padding:13px 10px;text-align:center;color:#16202B}.diag .core{background:#D81E05;color:#fff;border-color:#D81E05;box-shadow:0 6px 18px rgba(216,30,5,.25)}.diag .navy{background:#16202B;color:#fff;border-color:#16202B}
-.timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#f0d9d4}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:#D81E05;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 0 0 1px #f0d9d4}.tl .d{font-size:11px;font-weight:800;text-transform:uppercase;color:#D81E05;text-align:center;margin-bottom:6px}.tl ul{margin-left:16px}.tl li{font-size:11.5px;margin-bottom:4px}
+.timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#f0d9d4}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:#D81E05;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 0 0 1px #f0d9d4}.tl .d{font-size:11px;font-weight:800;text-transform:uppercase;color:#D81E05;text-align:center;margin-bottom:6px}.tl ul{margin-left:16px}.tl li{font-size:11.5px;margin-bottom:4px;color:#3a4656}
 .kpirow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}.kpi{border:1px solid #E7E9EC;border-radius:11px;padding:16px;text-align:center;background:linear-gradient(180deg,#fff,#fafbfc)}.kpi .n{font-size:24px;font-weight:800;color:#25845F}.kpi .l{font-size:11px;color:#4A5A75;margin-top:3px}
+.map{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.map th{background:#16202B;color:#fff;padding:8px 10px;text-align:left;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase}
+.map td{border-bottom:1px solid #E7E9EC;padding:9px 10px;color:#3a4656;vertical-align:top}
+.map tr:nth-child(even) td{background:#F7F8FA}
+.adr{display:grid;gap:8px;margin-top:6px}
+.ad{border:1px solid #E7E9EC;border-radius:10px;padding:13px 14px;border-left:3px solid #D81E05}
+.ad .k{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#D81E05;margin-bottom:4px}
+.ad b{display:block;font-size:13px;color:#16202B;margin-bottom:3px}.ad p{font-size:12.5px;color:#5a6675}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
-  .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
-  .donut{margin:0 auto 16px}
+  .diag .lay,.timeline,.kpirow{display:block!important}
+  .diag .bx,.timeline .tl,.kpi{margin-bottom:10px}
   .meta{text-align:left!important}
   table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Architecture &amp; Roadmap</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 6 &middot; Architecture</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Architecture &amp; Roadmap</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 5 &middot; Architecture</div></div>
 <div class="body">
+<p class="lead">Target-state design beyond Assessment. Control mapping, decision records, and a phased build plan aligned to MCRA and NIST, ready for an Implementation SOW under Synsera brand.</p>
+
 <h2>Target-state architecture</h2>
-<p class="lead">Aligned to the Microsoft Cybersecurity Reference Architecture and NIST, sequenced into a phased, SOW-ready plan with the Microsoft investment mapped to outcomes.</p>
 <div class="diag">
-<div class="lay"><div class="bx">Identity &amp; Access &middot; Entra, Conditional Access, PIM, Agent ID</div></div>
-<div class="lay"><div class="bx">Data &amp; Purview</div><div class="bx">Apps &amp; Endpoints</div><div class="bx core">Zero Trust</div><div class="bx">Cloud &amp; Infra</div><div class="bx">Network / GSA</div></div>
-<div class="lay"><div class="bx navy">Security Operations &middot; Defender + Sentinel</div><div class="bx navy">AI Governance &middot; Agent ID + Purview DSPM</div></div>
+<div class="lay"><div class="bx">Identity &amp; Access</div></div>
+<div class="lay"><div class="bx">Data</div><div class="bx">Apps</div><div class="bx core">Zero Trust</div><div class="bx">Endpoints</div><div class="bx">Cloud</div></div>
+<div class="lay"><div class="bx navy">Security Operations</div><div class="bx navy">Compliance</div></div>
 </div>
+<p class="note" style="margin-top:6px">Detail layer: Entra / Conditional Access / PIM / Agent ID on identity; Purview on data; Defender + Sentinel on SecOps; Global Secure Access on network.</p>
+
+<h2>Control mapping (Assessment to build)</h2>
+<table class="map">
+  <thead><tr><th>Assessment finding</th><th>Target control</th><th>Workstream</th><th>Phase</th></tr></thead>
+  <tbody>
+    <tr><td>R-01 Copilot oversharing</td><td>Purview DSPM for AI + label enforcement</td><td>Data / AI</td><td>1</td></tr>
+    <tr><td>R-02 No unified SIEM</td><td>Sentinel in Defender portal + core detections</td><td>SecOps</td><td>1</td></tr>
+    <tr><td>R-03 DLP email-only</td><td>Labels + endpoint / cloud DLP</td><td>Data</td><td>2</td></tr>
+    <tr><td>R-04 Ungoverned agents</td><td>Entra Agent ID + CA for agents</td><td>AI / Identity</td><td>2</td></tr>
+    <tr><td>R-05 Standing admins</td><td>PIM eligible roles; zero standing rights</td><td>Identity</td><td>1</td></tr>
+  </tbody>
+</table>
+
+<h2>Architecture decision records</h2>
+<div class="adr">
+  <div class="ad"><div class="k">ADR-01</div><b>Microsoft-first, in-tenant</b><p>All primary controls on Microsoft Security already in E5. Non-Microsoft PAM / IGA only if a hard gap remains after design.</p></div>
+  <div class="ad"><div class="k">ADR-02</div><b>Sentinel lands in the Defender portal</b><p>No parallel Azure-portal SIEM path. Migration sequenced in Phase 1 with core detections before MDR option.</p></div>
+  <div class="ad"><div class="k">ADR-03</div><b>Labels before broad Copilot</b><p>Proportionate taxonomy and DLP must be live on priority workloads before Copilot expansion beyond pilot.</p></div>
+</div>
+
 <h2>Phased plan</h2>
 <div class="timeline">
 <div class="tl"><div class="node">1</div><div class="d">Phase 1</div><ul><li>Identity baseline &amp; PIM</li><li>Sentinel &amp; core detections</li><li>DSPM for AI, fix oversharing</li></ul></div>
 <div class="tl"><div class="node">2</div><div class="d">Phase 2</div><ul><li>Labels &amp; DLP rollout</li><li>Defender on servers</li><li>Agent ID governance</li></ul></div>
 <div class="tl"><div class="node">3</div><div class="d">Phase 3</div><ul><li>Global Secure Access</li><li>Governed Copilot rollout</li><li>Managed MDR onboarding</li></ul></div>
 </div>
+
 <h2>Expected outcomes</h2>
 <div class="kpirow"><div class="kpi"><div class="n">&gt;85%</div><div class="l">E5 activated</div></div><div class="kpi"><div class="n">40%</div><div class="l">MTTR reduction</div></div><div class="kpi"><div class="n">0</div><div class="l">Standing admins</div></div><div class="kpi"><div class="n">Safe</div><div class="l">Copilot rollout</div></div></div>
-<div class="callout"><strong>Next step:</strong> proceed to Implementation under a scoped SOW. VJ, Principal Architect, assures delivery throughout, with no hand-off.</div>
-<p class="note">Reference architecture and directional plan. Detailed build runbooks are produced within the implementation engagement.</p>
+
+<div class="callout"><strong>Next step:</strong> proceed to Implementation under a scoped SOW. Principal Architect assures delivery throughout, with no hand-off.</div>
+<p class="note">Reference architecture and directional plan under Synsera brand, delivered by Foxtcon One. Detailed build runbooks are produced within the implementation engagement.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>

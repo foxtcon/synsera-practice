@@ -6,54 +6,82 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
 .kpirow{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}.kpi{border:1px solid #E7E9EC;border-radius:11px;padding:16px;text-align:center;background:linear-gradient(180deg,#fff,#fafbfc)}.kpi .n{font-size:24px;font-weight:800;color:#D81E05}.kpi .l{font-size:11px;color:#4A5A75;margin-top:3px}
 .two{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;margin-top:6px}
 .donut{width:150px;height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto}.donut i{width:108px;height:108px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal}.donut i b{font-size:26px;font-weight:800;color:#25845F}.donut i span{font-size:10px;color:#7d8ca3;text-transform:uppercase}
 .trend svg{width:100%;height:120px;display:block}
 .incid{display:flex;align-items:flex-end;gap:14px;height:90px;margin-top:6px}.ic2{flex:1;text-align:center}.ic2 .b{background:linear-gradient(#F7941D,#D81E05);border-radius:4px 4px 0 0;margin:0 auto}.ic2 .l{font-size:10.5px;color:#7d8ca3;margin-top:5px}
-.qbr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}.qc{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #D81E05}.qc .r{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#B31604;font-weight:800}.qc h4{font-size:13.5px;margin:3px 0 5px}.qc p{font-size:11.5px;color:#5a6675}
+.qbr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}.qc{border:1px solid #E7E9EC;border-radius:11px;padding:15px;border-top:4px solid #D81E05;height:100%}.qc .r{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#B31604;font-weight:800}.qc h4{font-size:13.5px;margin:3px 0 5px}.qc p{font-size:11.5px;color:#5a6675}
+.sla{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.sla th{background:#16202B;color:#fff;padding:8px 10px;text-align:left;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase}
+.sla td{border-bottom:1px solid #E7E9EC;padding:9px 10px;color:#3a4656}
+.sla tr:nth-child(even) td{background:#F7F8FA}
+.pack{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.pk{border:1px solid #E7E9EC;border-radius:11px;padding:14px 15px;border-top:4px solid #F7941D;height:100%}
+.pk h4{font-size:13px;margin-bottom:6px}.pk ul{margin-left:16px}.pk li{font-size:12.5px;color:#5a6675;margin-bottom:4px}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
-  .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
+  .two,.qbr,.pack,.incid{display:block!important}
   .donut{margin:0 auto 16px}
+  .qc,.pk,.ic2{margin-bottom:10px}
   .meta{text-align:left!important}
   table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Managed Service &amp; MDR Report</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 8 &middot; Manage &middot; Monthly</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Managed Service &amp; MDR Report</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 7 &middot; Manage &middot; Monthly + QBR</div></div>
 <div class="body">
+<p class="lead">Recurring ops depth beyond Implementation. Monthly KPIs, coverage trend, incident pack, and a QBR that seeds the next scoped SOW under Synsera brand.</p>
+
 <h2>This month at a glance</h2>
 <div class="kpirow"><div class="kpi"><div class="n">2.1h</div><div class="l">Mean time to respond</div></div><div class="kpi"><div class="n">-40%</div><div class="l">MTTR vs baseline</div></div><div class="kpi"><div class="n">147</div><div class="l">Signals triaged</div></div><div class="kpi"><div class="n">3</div><div class="l">Incidents handled</div></div></div>
+
 <h2>Coverage &amp; posture trend</h2>
 <div class="two">
 <div><div class="donut" style="background:conic-gradient(#25845F 0 99.9%,#EEF1F6 0)"><i><b>99.9%</b><span>coverage</span></i></div></div>
 <div class="trend"><svg viewBox="0 0 320 120" preserveAspectRatio="none"><polygon points="0,96 53,86 106,72 160,56 213,42 266,30 320,20 320,120 0,120" fill="#e9f5ef"/><polyline points="0,96 53,86 106,72 160,56 213,42 266,30 320,20" fill="none" stroke="#25845F" stroke-width="3"/><polyline points="0,44 53,50 106,60 160,70 213,80 266,90 320,98" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-dasharray="5 4"/></svg><p class="note" style="margin-top:2px">Green: security posture rising. Red dashed: open incidents falling.</p></div>
 </div>
+
+<h2>SLA / KPI pack</h2>
+<table class="sla">
+  <thead><tr><th>Metric</th><th>Target</th><th>Actual</th><th>Trend</th></tr></thead>
+  <tbody>
+    <tr><td>Coverage of monitored workloads</td><td>99.5%</td><td>99.9%</td><td>Met</td></tr>
+    <tr><td>Mean time to respond</td><td>&lt; 4h</td><td>2.1h</td><td>Met (-40% vs baseline)</td></tr>
+    <tr><td>Critical alert acknowledgement</td><td>&lt; 15 min</td><td>9 min</td><td>Met</td></tr>
+    <tr><td>Posture drift tickets closed</td><td>90%</td><td>94%</td><td>Met</td></tr>
+  </tbody>
+</table>
+
 <h2>Incidents this month</h2>
 <div class="incid"><div class="ic2"><div class="b" style="height:40px;width:60%"></div><div class="l">Wk 1 &middot; Phishing</div></div><div class="ic2"><div class="b" style="height:22px;width:60%"></div><div class="l">Wk 2 &middot; Sign-in</div></div><div class="ic2"><div class="b" style="height:52px;width:60%"></div><div class="l">Wk 3 &middot; Agent</div></div><div class="ic2"><div class="b" style="height:14px;width:60%"></div><div class="l">Wk 4 &middot; Minor</div></div></div>
 <p class="note" style="margin-top:2px">All contained. Phishing attempt secured and CA tightened; suspicious agent scoped under Agent ID.</p>
-<h2>Next quarter: the QBR</h2>
+
+<h2>QBR pack (this quarter)</h2>
+<div class="pack">
+  <div class="pk"><h4>What we review</h4><ul><li>Posture vs Architecture target</li><li>SLA performance and incident themes</li><li>E5 activation remaining</li><li>Next gap that becomes an SOW</li></ul></div>
+  <div class="pk"><h4>Inputs Synsera receives</h4><ul><li>Executive one-pager</li><li>KPI trend pack</li><li>Recommended next SOW scope</li><li>Commercial options (day rate or fixed)</li></ul></div>
+</div>
+
+<h2>Next quarter priorities</h2>
 <div class="qbr">
 <div class="qc"><div class="r">Data</div><h4>Extend DLP</h4><p>Close residual exposure across remaining workloads.</p></div>
 <div class="qc"><div class="r">AI</div><h4>Broaden Copilot</h4><p>Governed rollout: productivity with control.</p></div>
 <div class="qc"><div class="r">Network</div><h4>Complete GSA</h4><p>Retire legacy VPN with Global Secure Access.</p></div>
 </div>
+
 <div class="callout"><strong>The QBR closes the loop:</strong> each review shows Northbridge their current posture and points at the next step, which becomes the next scoped engagement.</div>
-<p class="note">Managed detection and response delivered with a vetted partner SOC, with VJ retaining architecture oversight.</p>
+<p class="note">Managed detection and response delivered with a vetted partner SOC, with Foxtcon retaining architecture oversight under Synsera brand.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>

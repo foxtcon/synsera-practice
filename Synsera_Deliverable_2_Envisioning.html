@@ -6,50 +6,82 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
-.plays{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.play{border:1px solid #E7E9EC;border-radius:12px;padding:18px;border-top:4px solid #D81E05}.play .ic{font-size:26px;margin-bottom:8px}.play h4{font-size:15px;margin-bottom:6px}.play .w{font-size:11.5px;color:#7d8ca3;margin-bottom:6px}.play .o{font-size:12.5px;color:#25845F;font-weight:600}
+.nnl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.col{border:1px solid #E7E9EC;border-radius:10px;padding:14px;height:100%}
+.ch{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;border-radius:4px;padding:3px 7px;display:inline-block;margin-bottom:8px}
+.col:nth-child(1) .ch,.col:nth-child(2) .ch,.col:nth-child(3) .ch{background:#D81E05}
+.chip{font-size:12px;color:#3a4656;background:#F7F8FA;border-radius:6px;padding:6px 8px;margin-bottom:6px;display:block}
+.plays{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.play{border:1px solid #E7E9EC;border-radius:12px;padding:16px;border-top:4px solid #D81E05;height:100%}
+.play .ic{width:34px;height:34px;border-radius:8px;background:#fbf4f1;color:#D81E05;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-bottom:8px}
+.play h4{font-size:15px;margin-bottom:6px}.play .w{font-size:11.5px;color:#7d8ca3;margin-bottom:6px}.play .o{font-size:12.5px;color:#25845F;font-weight:600}
 .cvt{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:6px}.box{border-radius:11px;padding:16px 18px}.box h4{font-size:11px;text-transform:uppercase;margin-bottom:6px}.box p{font-size:12.8px}.box.cur{background:#FBE4E1;border:1px solid #f1c4bd}.box.cur h4{color:#C0392B}.box.tgt{background:#E7F7ED;border:1px solid #bfe6cd}.box.tgt h4{color:#1a7a52}.arw{font-size:26px;color:#D81E05;font-weight:800}
-.timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#f0d9d4}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:#D81E05;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 0 0 1px #f0d9d4}.tl .d{font-size:11px;font-weight:800;text-transform:uppercase;color:#D81E05;text-align:center;margin-bottom:6px}.tl ul{margin-left:16px}.tl li{font-size:11.5px;margin-bottom:4px}
+.timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#f0d9d4}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:#D81E05;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 0 0 1px #f0d9d4}.tl .d{font-size:11px;font-weight:800;text-transform:uppercase;color:#D81E05;text-align:center;margin-bottom:6px}.tl ul{margin-left:16px}.tl li{font-size:11.5px;margin-bottom:4px;color:#3a4656}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.card{border:1px solid #E7E9EC;border-radius:11px;padding:14px 15px;border-top:4px solid #F7941D;height:100%}
+.card h4{font-size:13px;margin-bottom:5px}.card p,.card li{font-size:12.5px;color:#5a6675}.card ul{margin:6px 0 0 16px}
+.fund{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.fk{flex:1;min-width:140px;border:1px solid #E7E9EC;border-radius:11px;padding:14px;text-align:center;background:linear-gradient(180deg,#fff,#fafbfc)}
+.fk .n{font-size:18px;font-weight:800;color:#D81E05}.fk .l{font-size:11px;color:#4A5A75;margin-top:3px}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}.callout.amber{background:#FFF7E6;border-left-color:#F7941D}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
-  .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
-  .donut{margin:0 auto 16px}
+  .plays,.nnl,.grid,.cvt,.timeline,.fund{display:block!important}
+  .plays .play,.nnl .col,.grid .card,.timeline .tl,.fund .fk{margin-bottom:10px}
+  .arw{display:none}
   .meta{text-align:left!important}
-  table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Envisioning Roadmap</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 4 &middot; Envisioning Workshop</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Envisioning Roadmap</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 3 &middot; Envisioning Workshop</div></div>
 <div class="body">
+<p class="lead">Workshop depth beyond Discovery: solution plays agreed, target scenarios named, funding path checked, and Assessment pillars locked, still directional, not control-level evidence.</p>
+
 <h2>Three solution plays</h2>
-<div class="plays">
-<div class="play"><div class="ic">&#129504;</div><h4>Secure AI adoption</h4><div class="w">Copilot piloted, agents ungoverned.</div><div class="o">&rarr; Copilot-safe estate &amp; agent governance</div></div>
-<div class="play"><div class="ic">&#128274;</div><h4>Data security</h4><div class="w">Sensitive data unclassified, DLP on email only.</div><div class="o">&rarr; Classification, labels, DLP, insider risk</div></div>
-<div class="play"><div class="ic">&#128737;&#65039;</div><h4>Threat protection</h4><div class="w">Fragmented consoles, no unified SIEM.</div><div class="o">&rarr; Unified SecOps, path to managed MDR</div></div>
+<div class="nnl" style="margin-bottom:12px">
+  <div class="col"><span class="ch">Play</span><span class="chip">Secure AI adoption</span><span class="chip">Copilot readiness</span></div>
+  <div class="col"><span class="ch">Play</span><span class="chip">Data security</span><span class="chip">Purview DSPM</span></div>
+  <div class="col"><span class="ch">Play</span><span class="chip">Threat protection</span><span class="chip">Sentinel + XDR</span></div>
 </div>
+<div class="plays">
+  <div class="play"><div class="ic">AI</div><h4>Secure AI adoption</h4><div class="w">Copilot piloted, agents ungoverned.</div><div class="o">&rarr; Copilot-safe estate &amp; Agent ID governance</div></div>
+  <div class="play"><div class="ic">DA</div><h4>Data security</h4><div class="w">Sensitive data unclassified, DLP on email only.</div><div class="o">&rarr; Classification, labels, DLP, insider risk</div></div>
+  <div class="play"><div class="ic">SO</div><h4>Threat protection</h4><div class="w">Fragmented consoles, no unified SIEM.</div><div class="o">&rarr; Unified SecOps, path to managed MDR</div></div>
+</div>
+
 <h2>Where you are, where we take you</h2>
 <div class="cvt"><div class="box cur"><h4>Today</h4><p>E5 owned but under 40% used. Data unclassified, SecOps fragmented, AI ungoverned, legacy VPN in place.</p></div><div class="arw">&rarr;</div><div class="box tgt"><h4>Target</h4><p>Activated E5, protected data, unified SecOps, governed AI, and identity-first access, on the platform you already own.</p></div></div>
+
 <h2>Sequenced roadmap</h2>
 <div class="timeline">
-<div class="tl"><div class="node">1</div><div class="d">Now</div><ul><li>Sentinel in the Defender portal</li><li>Enforce Conditional Access</li><li>Purview DSPM for AI baseline</li></ul></div>
-<div class="tl"><div class="node">2</div><div class="d">Next</div><ul><li>Data classification &amp; DLP</li><li>Defender on servers</li><li>Global Secure Access pilot</li></ul></div>
-<div class="tl"><div class="node">3</div><div class="d">Later</div><ul><li>Governed Copilot rollout</li><li>Managed MDR &amp; QBRs</li><li>Zero Trust maturity</li></ul></div>
+  <div class="tl"><div class="node">1</div><div class="d">Now</div><ul><li>Sentinel in the Defender portal</li><li>Enforce Conditional Access</li><li>Purview DSPM for AI baseline</li></ul></div>
+  <div class="tl"><div class="node">2</div><div class="d">Next</div><ul><li>Data classification &amp; DLP</li><li>Defender on servers</li><li>Global Secure Access pilot</li></ul></div>
+  <div class="tl"><div class="node">3</div><div class="d">Later</div><ul><li>Governed Copilot rollout</li><li>Managed MDR &amp; QBRs</li><li>Zero Trust maturity</li></ul></div>
 </div>
+
+<h2>Workshop decisions &amp; funding</h2>
+<div class="fund">
+  <div class="fk"><div class="n">3</div><div class="l">Plays agreed</div></div>
+  <div class="fk"><div class="n">AI · DA · SO</div><div class="l">Assessment pillars</div></div>
+  <div class="fk"><div class="n">Eligible?</div><div class="l">Microsoft funding check</div></div>
+  <div class="fk"><div class="n">E5 first</div><div class="l">Licence posture</div></div>
+</div>
+<div class="grid" style="margin-top:12px">
+  <div class="card"><h4>Workshop decision records</h4><ul><li>Secure AI and Data Security are the funded-play candidates</li><li>Threat protection sequenced in parallel via Sentinel-to-Defender</li><li>Assessment will evidence AI, Data, and SecOps only in wave 1</li><li>Architecture deferred until Assessment findings are signed</li></ul></div>
+  <div class="card"><h4>What Assessment must prove</h4><ul><li>Control-level gaps behind the Health Check scores</li><li>Evidence for oversharing and Copilot blockers</li><li>Sentinel / XDR readiness and effort band</li><li>Creditable fee path into Implementation</li></ul></div>
+</div>
+
 <div class="callout amber"><strong>Microsoft funding:</strong> Northbridge appears eligible for a Microsoft-funded workshop for the Secure AI and Data Security plays, to be confirmed with the Microsoft partner team.</div>
-<div class="callout"><strong>Next step:</strong> a White Glove Assessment on the priority pillars, validating each finding control by control. The assessment fee credits against the build.</div>
-<p class="note">Directional roadmap from the envisioning session. Scope and sequencing are confirmed at Assessment and Architecture.</p>
+<div class="callout"><strong>Next step:</strong> White Glove Assessment on the priority pillars, validating each finding control by control. The assessment fee credits against the build.</div>
+<p class="note">Directional roadmap from the envisioning session under Synsera brand, delivered by Foxtcon One. Scope and sequencing are confirmed at Assessment and Architecture.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>

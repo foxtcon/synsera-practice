@@ -6,39 +6,52 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
 .kpirow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}.kpi{border:1px solid #E7E9EC;border-radius:11px;padding:16px;text-align:center;background:linear-gradient(180deg,#fff,#fafbfc)}.kpi .n{font-size:26px;font-weight:800;color:#D81E05}.kpi .l{font-size:11px;color:#4A5A75;margin-top:3px}
 .split{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .hbars{flex:1;min-width:300px}.hbar{display:flex;align-items:center;gap:11px;margin-bottom:9px}.hbar .l{flex:0 0 130px;font-size:12.5px;font-weight:600}.hbar .t{flex:1;height:13px;background:#EEF1F6;border-radius:7px;overflow:hidden}.hbar .f{display:block;height:100%;border-radius:7px;min-width:2px}.hbar .v{flex:0 0 30px;text-align:right;font-weight:800;font-size:12px}
 .crit{background:#C0392B}.dev{background:#E0A21C}.strong{background:#25845F}.tcrit{color:#C0392B}.tdev{color:#B9820A}.tstrong{color:#25845F}
-.sevdon{text-align:center;flex:none}.sevdon .donut{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto}.sevdon .donut i{width:82px;height:82px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;color:#16202B}.sevdon .donut i b{font-size:24px}.sevdon .donut i span{font-size:9px;color:#7d8ca3;text-transform:uppercase}
+.sevdon{text-align:center;flex:none}.sevdon .donut{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto}.sevdon .donut i{width:82px;height:82px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;color:#16202B;font-style:normal}.sevdon .donut i b{font-size:24px}.sevdon .donut i span{font-size:9px;color:#7d8ca3;text-transform:uppercase}
 .leg{display:flex;gap:12px;justify-content:center;margin-top:8px;font-size:11px}.leg i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:4px}
+.heat{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.heat th{background:#16202B;color:#fff;padding:8px 10px;text-align:left;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase}
+.heat td{border-bottom:1px solid #E7E9EC;padding:8px 10px;vertical-align:middle}
+.heat tr:nth-child(even) td{background:#F7F8FA}
+.pill{display:inline-block;min-width:52px;text-align:center;border-radius:4px;padding:3px 7px;font-size:10px;font-weight:800;color:#fff}
+.pill.h{background:#C0392B}.pill.m{background:#E0A21C;color:#16202B}.pill.l{background:#25845F}
+.reg{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.reg th{background:#16202B;color:#fff;padding:8px 10px;text-align:left;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase}
+.reg td{border-bottom:1px solid #E7E9EC;padding:9px 10px;color:#3a4656;vertical-align:top}
 .ladder{margin-top:6px}.step{display:flex;align-items:center;gap:12px;border:1px solid #E7E9EC;border-radius:10px;padding:11px 14px;margin-bottom:8px}.step .no{width:28px;height:28px;border-radius:8px;background:#D81E05;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}.step .tx{flex:1;font-size:13px}.step .tx b{display:block}.step .tx span{font-size:11.5px;color:#7d8ca3}.step .ef{font-size:10px;font-weight:800;text-transform:uppercase;color:#B9820A;background:#FFF7E6;border:1px solid #F3D488;border-radius:10px;padding:3px 9px}
+.ev{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.evc{border:1px solid #E7E9EC;border-radius:11px;padding:13px 14px;border-top:4px solid #1C86C9;height:100%}
+.evc h4{font-size:12.5px;margin-bottom:4px}.evc p{font-size:11.5px;color:#5a6675}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
-  .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
+  .split,.ev,.hbars{display:block!important}
+  .ev .evc{margin-bottom:10px}
   .donut{margin:0 auto 16px}
   .meta{text-align:left!important}
   table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>White Glove Assessment</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 5 &middot; Assessment</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>White Glove Assessment</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 4 &middot; Assessment &middot; Evidenced</div></div>
 <div class="body">
+<p class="lead">Control-level depth beyond Envisioning. Findings are evidenced in-tenant; the fee credits against Implementation. Foxtcon owns delivery under the Synsera brand.</p>
+
 <h2>Assessment at a glance</h2>
 <div class="kpirow"><div class="kpi"><div class="n">3</div><div class="l">Priority pillars</div></div><div class="kpi"><div class="n">64</div><div class="l">Controls tested</div></div><div class="kpi"><div class="n">18</div><div class="l">High-severity gaps</div></div><div class="kpi"><div class="n">100%</div><div class="l">Evidenced</div></div></div>
+
 <h2>Maturity &amp; severity</h2>
 <div class="split">
 <div class="hbars">
@@ -50,6 +63,36 @@ h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;fon
 </div>
 <div class="sevdon"><div class="donut" style="background:conic-gradient(#C0392B 0 50%,#E0A21C 50% 78%,#25845F 78% 100%)"><i><b>64</b><span>controls</span></i></div><div class="leg"><span><i style="background:#C0392B"></i>High 18</span><span><i style="background:#E0A21C"></i>Med 10</span><span><i style="background:#25845F"></i>Pass 36</span></div></div>
 </div>
+
+<h2>Gap heat (control families)</h2>
+<table class="heat">
+  <thead><tr><th>Family</th><th>Identity</th><th>Data</th><th>SecOps</th><th>Endpoints</th><th>AI</th></tr></thead>
+  <tbody>
+    <tr><td>Policy / config</td><td><span class="pill l">Low</span></td><td><span class="pill h">High</span></td><td><span class="pill h">High</span></td><td><span class="pill m">Med</span></td><td><span class="pill h">High</span></td></tr>
+    <tr><td>Monitoring / detect</td><td><span class="pill m">Med</span></td><td><span class="pill m">Med</span></td><td><span class="pill h">High</span></td><td><span class="pill l">Low</span></td><td><span class="pill h">High</span></td></tr>
+    <tr><td>Response / ops</td><td><span class="pill l">Low</span></td><td><span class="pill m">Med</span></td><td><span class="pill h">High</span></td><td><span class="pill m">Med</span></td><td><span class="pill m">Med</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Evidence method</h2>
+<div class="ev">
+  <div class="evc"><h4>Tenant review</h4><p>Portal configuration, Secure Score signals, and policy export, inside Northbridge’s tenant.</p></div>
+  <div class="evc"><h4>Sample &amp; interview</h4><p>Named control owners; spot-checks on labels, CA, and Sentinel connectors.</p></div>
+  <div class="evc"><h4>Working papers</h4><p>Retained by the practice; this report is the board-facing outcome only.</p></div>
+</div>
+
+<h2>Risk register (top entries)</h2>
+<table class="reg">
+  <thead><tr><th>ID</th><th>Risk</th><th>Pillar</th><th>Sev</th><th>Evidence</th><th>Recommended control</th></tr></thead>
+  <tbody>
+    <tr><td>R-01</td><td>Copilot can surface overshared content</td><td>AI / Data</td><td><span class="pill h">High</span></td><td>Open sharing samples; no DSPM for AI baseline</td><td>Purview DSPM for AI + label enforcement</td></tr>
+    <tr><td>R-02</td><td>No unified SIEM investigation path</td><td>SecOps</td><td><span class="pill h">High</span></td><td>Sentinel licensed, not in Defender portal</td><td>Sentinel-to-Defender migration + core detections</td></tr>
+    <tr><td>R-03</td><td>DLP limited to email</td><td>Data</td><td><span class="pill h">High</span></td><td>Endpoint / cloud DLP policies absent</td><td>Proportionate label taxonomy + DLP rollout</td></tr>
+    <tr><td>R-04</td><td>Agents outside identity governance</td><td>AI</td><td><span class="pill m">Med</span></td><td>Pilot agents without Agent ID</td><td>Entra Agent ID + Conditional Access for agents</td></tr>
+    <tr><td>R-05</td><td>Standing admin paths remain</td><td>Identity</td><td><span class="pill m">Med</span></td><td>PIM coverage incomplete on break-glass set</td><td>PIM eligible roles; remove standing rights</td></tr>
+  </tbody>
+</table>
+
 <h2>Risk-prioritised remediation</h2>
 <div class="ladder">
 <div class="step"><div class="no">1</div><div class="tx"><b>Remediate data oversharing, enable Purview DSPM for AI</b><span>Data / AI</span></div><span class="ef">Medium</span></div>
@@ -58,8 +101,9 @@ h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;fon
 <div class="step"><div class="no">4</div><div class="tx"><b>Bring agents under Entra Agent ID governance</b><span>AI</span></div><span class="ef">Medium</span></div>
 <div class="step"><div class="no">5</div><div class="tx"><b>Establish managed detection and response coverage</b><span>Security Operations</span></div><span class="ef">Ongoing</span></div>
 </div>
-<div class="callout"><strong>Next step:</strong> proceed to Architecture to design the target state and sequence the build. The assessment fee credits against the implementation.</div>
-<p class="note">Evidence-based assessment. Working papers are retained by the practice; this report presents the outcome and the prioritised path.</p>
+
+<div class="callout"><strong>Next step:</strong> Architecture to design the target state, map controls to build workstreams, and sequence the Implementation SOW. Assessment fee credits against the build.</div>
+<p class="note">Evidence-based assessment under Synsera brand, delivered by Foxtcon One. Working papers retained by the practice; this report presents the outcome and the prioritised path.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>

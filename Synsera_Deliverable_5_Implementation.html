@@ -6,34 +6,42 @@
 .bar h1{font-size:22px;font-weight:800;margin-top:10px}.meta{font-size:11.5px;color:#c7d0d8;text-align:right;line-height:1.7}
 .body{padding:32px 36px}
 h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;font-weight:800;margin:26px 0 12px;border-bottom:1px solid #E7E9EC;padding-bottom:5px}
+h2:first-child{margin-top:0}
 .lead{font-size:14px;color:#3a4656}
 .rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:6px}.ring2{text-align:center}.ring2 .r{width:92px;height:92px;border-radius:50%;margin:0 auto 7px;display:flex;align-items:center;justify-content:center}.ring2 .r i{width:66px;height:66px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#16202B;font-style:normal}.ring2 .l{font-size:11.5px;color:#4a5a75;font-weight:600}
 .gates{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.gate{flex:1;min-width:120px;border:1px solid #E7E9EC;border-radius:11px;padding:14px;text-align:center;font-size:12px;font-weight:600}.gate .g{width:26px;height:26px;border-radius:50%;background:#25845F;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 7px;font-size:13px}.gate.pending{opacity:.7}.gate.pending .g{background:#c7ccd2}
 .timeline{display:flex;margin-top:12px}.tl{flex:1;position:relative;padding:30px 8px 0}.tl:before{content:"";position:absolute;top:10px;left:0;right:0;height:3px;background:#dfe4ea}.tl:first-child:before{left:50%}.tl:last-child:before{right:50%}.tl .node{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#25845F;border:3px solid #fff;box-shadow:0 0 0 1px #dfe4ea}.tl.pending .node{background:#c7ccd2}.tl b{font-size:12px;display:block;text-align:center}.tl span{font-size:10.5px;color:#7d8ca3;display:block;text-align:center}
+.ws{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.wsc{border:1px solid #E7E9EC;border-radius:11px;padding:14px 15px;border-top:4px solid #D81E05;height:100%}
+.wsc h4{font-size:13px;margin-bottom:6px}.wsc ul{margin-left:16px}.wsc li{font-size:12.5px;color:#5a6675;margin-bottom:4px}
+.acc{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+.acc th{background:#16202B;color:#fff;padding:8px 10px;text-align:left;font-size:10.5px;letter-spacing:.4px;text-transform:uppercase}
+.acc td{border-bottom:1px solid #E7E9EC;padding:9px 10px;color:#3a4656;vertical-align:top}
+.acc tr:nth-child(even) td{background:#F7F8FA}
+.rb{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.rbc{border:1px solid #E7E9EC;border-radius:11px;padding:13px 14px;border-top:4px solid #1C86C9;height:100%}
+.rbc h4{font-size:12.5px;margin-bottom:4px}.rbc p{font-size:11.5px;color:#5a6675}
 .callout{background:#fbf4f1;border-left:3px solid #D81E05;border-radius:8px;padding:13px 16px;font-size:13px;margin-top:14px}
 .samp{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#F7941D;border:1px solid #f3d5b8;background:#fdf3e6;border-radius:4px;padding:2px 6px;margin-left:8px;font-weight:700}
 .note{font-size:10.5px;color:#7d8ca3;font-style:italic;margin-top:10px}
 .foot{padding:20px 36px;background:#16202B;color:#9fb0be;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media print{body{background:#fff;padding:0}.page{box-shadow:none;margin:0;max-width:100%;border-radius:0}}
-
 @media(max-width:720px){
   body{padding:12px 10px 20px}
   .page{margin:0;border-radius:0;box-shadow:none;max-width:100%}
   .bar,.body,.foot{padding-left:24px!important;padding-right:24px!important}
   .bar{padding-top:22px!important;padding-bottom:22px!important}
-  .grid,.nnl,.vcards,.hbars,.hero-metric,.util{display:block!important}
-  .vcards .vc,.nnl .col,.grid .box{margin-bottom:10px}
-  .hbar{flex-wrap:wrap}.hbar .l{flex:1 1 100%!important;margin-bottom:4px}
-  .donut{margin:0 auto 16px}
+  .rings,.gates,.timeline,.ws,.rb{display:block!important}
+  .ring2,.gate,.tl,.wsc,.rbc{margin-bottom:10px}
   .meta{text-align:left!important}
   table{display:block;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 }
-
 </style></head><body>
 <div class="page">
-<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Implementation Delivery Status</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 7 &middot; Implementation</div></div>
+<div class="bar"><div><div class="brand">synsera <b>&times; Foxtcon One</b></div><h1>Implementation Delivery Status</h1></div><div class="meta">SAMPLE<span class="samp">Illustrative</span><br>Northbridge Insurance<br>Microsoft Security Practice<br>Stage 6 &middot; Implementation</div></div>
 <div class="body">
-<p class="lead">Senior-led build against the approved architecture. VJ, Principal Architect, assures every phase as Technical Project Lead, with no hand-off. Status as of the current week.</p>
+<p class="lead">Build depth beyond Architecture. Workstreams, quality gates, acceptance criteria, and runbook hooks, with Principal Architect assurance throughout and no hand-off. Status as of the current week.</p>
+
 <h2>Progress by pillar</h2>
 <div class="rings">
 <div class="ring2"><div class="r" style="background:conic-gradient(#25845F 0 100%,#EEF1F6 0)"><i>100%</i></div><div class="l">Identity</div></div>
@@ -42,8 +50,36 @@ h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;fon
 <div class="ring2"><div class="r" style="background:conic-gradient(#25845F 0 88%,#EEF1F6 88% 100%)"><i>88%</i></div><div class="l">Endpoints</div></div>
 <div class="ring2"><div class="r" style="background:conic-gradient(#C0392B 0 45%,#EEF1F6 45% 100%)"><i>45%</i></div><div class="l">AI governance</div></div>
 </div>
+
+<h2>Workstreams this week</h2>
+<div class="ws">
+  <div class="wsc"><h4>Identity (done)</h4><ul><li>CA baseline live: MFA, legacy auth blocked</li><li>PIM eligible on break-glass and admin roles</li><li>Acceptance signed by Northbridge identity owner</li></ul></div>
+  <div class="wsc"><h4>Data (in progress)</h4><ul><li>Label taxonomy draft approved</li><li>DLP pilots on Exchange and SharePoint</li><li>DSPM for AI baseline: 72% complete</li></ul></div>
+  <div class="wsc"><h4>SecOps (in progress)</h4><ul><li>Sentinel connectors live in Defender portal</li><li>Core detections under review</li><li>MDR option deferred to Manage decision</li></ul></div>
+  <div class="wsc"><h4>AI governance (early)</h4><ul><li>Agent inventory started</li><li>Agent ID pilot tenants identified</li><li>Blocked on label coverage for Copilot expansion</li></ul></div>
+</div>
+
 <h2>Quality gates</h2>
 <div class="gates"><div class="gate"><div class="g">&#10003;</div>Mobilize</div><div class="gate"><div class="g">&#10003;</div>Build</div><div class="gate"><div class="g">&#10003;</div>Validate</div><div class="gate pending"><div class="g">4</div>Go-Live</div><div class="gate pending"><div class="g">5</div>Hypercare</div><div class="gate pending"><div class="g">6</div>Transition</div></div>
+
+<h2>Acceptance criteria (sample)</h2>
+<table class="acc">
+  <thead><tr><th>Workstream</th><th>Done when</th><th>Owner</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Identity</td><td>PIM eligible on named admin set; standing rights removed; CA report clean</td><td>Foxtcon / NB Identity</td><td>Met</td></tr>
+    <tr><td>Data labels</td><td>Taxonomy published; auto-label policies on priority sites; sample audit pass</td><td>Foxtcon / NB Data</td><td>In progress</td></tr>
+    <tr><td>SecOps</td><td>Sentinel in Defender portal; 5 core analytics rules firing; runbook linked</td><td>Foxtcon / NB SOC</td><td>In progress</td></tr>
+    <tr><td>AI governance</td><td>Agent ID on pilot agents; Copilot blocked from unlabeled libraries</td><td>Foxtcon / NB AI</td><td>Open</td></tr>
+  </tbody>
+</table>
+
+<h2>Runbook hooks</h2>
+<div class="rb">
+  <div class="rbc"><h4>RB-ID-01</h4><p>Break-glass and PIM elevation procedure (handed to identity ops).</p></div>
+  <div class="rbc"><h4>RB-SO-01</h4><p>Sentinel incident triage in Defender portal (draft in portal wiki).</p></div>
+  <div class="rbc"><h4>RB-DA-01</h4><p>Label exception and DLP false-positive path (pending go-live).</p></div>
+</div>
+
 <h2>Milestones</h2>
 <div class="timeline">
 <div class="tl"><div class="node"></div><b>CA baseline live</b><span>MFA, legacy auth blocked, PIM</span></div>
@@ -51,8 +87,9 @@ h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#D81E05;fon
 <div class="tl pending"><div class="node"></div><b>Labels &amp; DLP</b><span>Rollout underway</span></div>
 <div class="tl pending"><div class="node"></div><b>Agent ID</b><span>In progress</span></div>
 </div>
+
 <div class="callout"><strong>On completion:</strong> implemented controls, configuration runbooks, and knowledge transfer, all inside your own tenant. <strong>Next step:</strong> optional Managed service and MDR.</div>
-<p class="note">Weekly status is available live in the partner portal as it ships. Detailed build steps are delivered inside the engagement.</p>
+<p class="note">Weekly status is available live in the partner portal as it ships. Detailed build steps are delivered inside the engagement under Synsera brand, by Foxtcon One.</p>
 </div>
 <div class="foot"><div>Synsera &middot; Microsoft Security Practice &middot; in partnership with Foxtcon One &middot; Confidential to the named client</div><div>Sample deliverable</div></div>
 </div></body></html>
