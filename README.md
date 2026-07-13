@@ -14,8 +14,11 @@ Target URL: https://synsera.foxtconsecurity.com
 - **Program:** Pre-Health Check (~60 min) → interview-based Health Check
   (45–60 min) → Discovery → Envisioning → White Glove Assessment →
   Architecture → Implementation → optional Manage.
-- **First client framing:** Cole Technologies (fine-tune before scale), plus a
-  recommended mock delivery session with Synsera’s internal team.
+- **Pipeline framing:** Project A (primary foot in the door; coming on board
+  shortly) and Project B (mid-market utilities-sector engagement; stable
+  Purview Data Map / Unified Catalog work, expanding into DLP and Risk
+  Management). Recommended mock delivery session with Synsera’s internal
+  team before Project A.
 - **Client lift page:** Synsera-branded section ready to place on synsera.co.uk.
 
 ## Files
@@ -68,14 +71,17 @@ git push
 - Microsoft claims: Entra Agent ID GA **April 2026**; unified Purview DSPM
   **May 2026**; Sentinel in Defender portal GA; Azure-portal Sentinel retires
   31 March 2027.
-- Illustrative sample client in deliverables is Northbridge Insurance. Live
-  first-client framing in the hub is Cole Technologies.
+- Illustrative sample client in deliverables is Northbridge Insurance (clearly
+  SAMPLE). Live pipeline framing in the hub uses anonymised labels only:
+  Project A and Project B. Do not put real client names or identifying estate
+  maths on forwardable pages.
 - Before any end-client sees numbers or claims, sanity-check they are defensible.
 
 ## Useful hash links for Synsera
 - `#welcome` - partnership welcome
 - `#synfit` - fit with Synsera’s AI / Purview / agents offer
-- `#first` - Cole Technologies
+- `#first` - Project A (primary practice footprint)
+- `#utilities` - Project B (utilities-sector; current + expansion)
 - `#site` - client-facing page lift
 - `#lifecycle` - eight-stage program
 - `#commercial` - billing and pipeline (day rate or fixed)
