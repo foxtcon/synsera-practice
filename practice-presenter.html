@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synsera x Foxtcon One | Practice Presenter</title>
+<style>
+:root{
+  --red:#D81E05; --orange:#F7941D; --azure:#1C86C9; --navy:#0D1B2A;
+  --ink:#1B1F24; --muted:#6B7580; --slate:#54606C; --line:#E7E9EC;
+  --soft:#f4f6f8; --green:#25845F; --amber:#E0A21C; --critical:#C0392B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.5}
+button{font-family:inherit;cursor:pointer}
+.wrap{min-height:100vh;display:flex;flex-direction:column}
+
+/* ---------- shared header ---------- */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 26px;color:#fff;background:linear-gradient(120deg,#16202B,#3a1a12);border-bottom:4px solid var(--orange)}
+.brand{font-size:20px;font-weight:800;font-style:italic}
+.brand b{color:var(--orange);font-style:normal}
+.brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#c7d0d8;font-style:normal;margin-top:2px}
+.hdr .who{font-size:12px;color:#c7d0d8;text-align:right}
+
+/* ---------- launch page ---------- */
+.launch{max-width:760px;margin:0 auto;padding:70px 24px;text-align:center}
+.launch h1{font-size:30px;letter-spacing:-.4px;margin-bottom:10px}
+.launch p{color:var(--slate);margin-bottom:30px;font-size:15px}
+.launch .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lc{border:1px solid var(--line);border-radius:16px;background:#fff;padding:26px;text-align:left}
+.lc h3{font-size:18px;margin-bottom:6px}
+.lc.p h3{color:var(--azure)} .lc.c h3{color:var(--red)}
+.lc p{font-size:13px;color:var(--slate);margin-bottom:16px;min-height:56px}
+.btn{display:inline-block;border:none;border-radius:10px;padding:11px 18px;font-size:14px;font-weight:700;color:#fff}
+.btn.az{background:var(--azure)} .btn.rd{background:var(--red)} .btn.gh{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.hint{font-size:12px;color:var(--muted);margin-top:24px}
+
+/* ---------- practitioner ---------- */
+.pr{display:grid;grid-template-columns:270px 1fr;flex:1;min-height:0}
+.pr .side{background:var(--navy);color:#dfe6ee;padding:16px 0;overflow-y:auto}
+.modeToggle{display:flex;gap:6px;padding:0 14px 12px;margin:0 0 8px;border-bottom:1px solid #22303f}
+.modeToggle button{flex:1;background:#16202b;color:#9fb0be;border:1px solid #2a3a4a;border-radius:8px;padding:8px 6px;font-size:11.5px;font-weight:700}
+.modeToggle button.on{background:var(--azure);color:#fff;border-color:var(--azure)}
+.navlbl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7d93a6;padding:6px 18px}
+.snav{display:block;width:100%;text-align:left;background:none;border:none;color:#cdd7e0;padding:9px 18px;font-size:13px;display:flex;align-items:center;gap:9px;border-left:3px solid transparent}
+.snav:hover{background:#16202b}
+.snav.on{background:#16202b;border-left-color:var(--orange);color:#fff;font-weight:700}
+.snav .ix{width:20px;height:20px;border-radius:6px;background:#2a3a4a;color:#cdd7e0;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+.snav.on .ix{background:var(--orange);color:#16202b}
+.snav .fg{margin-left:auto;font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:#7d93a6}
+
+.pr .main{padding:22px 26px;overflow-y:auto;background:#fff}
+.crumb{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--azure);font-weight:800}
+.pr h2{font-size:22px;letter-spacing:-.3px;margin:4px 0 4px}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;border-radius:5px;padding:3px 9px}
+.lead{font-size:14px;color:var(--slate);margin:8px 0 16px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:18px 0 8px}
+.talk{background:#f0f7fc;border-left:3px solid var(--azure);border-radius:8px;padding:12px 15px;font-size:13.5px;color:#25405a}
+ul.ck{list-style:none} ul.ck li{position:relative;padding-left:20px;font-size:13.5px;margin-bottom:6px}
+ul.ck li:before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:2px;background:var(--orange)}
+.rownav{display:flex;gap:10px;margin-top:22px}
+.rownav button{border-radius:10px;padding:11px 16px;font-size:13.5px;font-weight:700;border:1px solid var(--line);background:#fff}
+.rownav button.prim{background:var(--azure);color:#fff;border-color:var(--azure)}
+.eng{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.engc{border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:12.5px;flex:1;min-width:160px}
+.engc b{display:block;color:var(--navy);font-size:12px;margin-bottom:2px}
+
+/* health check practitioner */
+.q{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.q p.qt{font-size:13.5px;font-weight:600;margin-bottom:9px}
+.mat{display:flex;gap:6px;flex-wrap:wrap}
+.mat button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 11px;font-size:12px;font-weight:600;color:var(--slate)}
+.mat button.on{color:#fff;border-color:transparent}
+.mat button.on[data-v="0"]{background:var(--critical)} .mat button.on[data-v="1"]{background:var(--amber)}
+.mat button.on[data-v="2"]{background:var(--azure)} .mat button.on[data-v="3"]{background:var(--green)}
+.notes{width:100%;margin-top:9px;border:1px solid var(--line);border-radius:8px;padding:8px;font-size:12.5px;font-family:inherit;resize:vertical;min-height:38px}
+.recbox{background:#fff7ef;border:1px solid #f3d9bd;border-radius:12px;padding:14px;margin-top:8px}
+.recbox .rl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#b9720a;font-weight:800;margin-bottom:6px}
+.recbox ul{margin-left:16px;font-size:13px} .recbox li{margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:20px;padding:8px 14px;font-size:12.5px;font-weight:700;color:var(--navy)}
+.chip.on{background:#fcECe9;border-color:#f2c9c1;color:var(--red)}
+
+/* client field */
+.cliField{display:flex;align-items:center;gap:8px;margin:14px 18px 6px}
+.cliField input{flex:1;border:1px solid #2a3a4a;background:#16202b;color:#fff;border-radius:8px;padding:8px;font-size:12.5px;font-family:inherit}
+
+/* ---------- client screen ---------- */
+.cl{flex:1;display:flex;flex-direction:column;background:#fff;min-height:0}
+.cl .body{flex:1;padding:34px 46px;overflow-y:auto}
+.kick{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:800}
+.cl h1{font-size:40px;letter-spacing:-.6px;margin:6px 0 6px;color:var(--navy)}
+.cl .tagline{font-size:17px;color:var(--slate);margin-bottom:22px}
+.stagecard{display:grid;grid-template-columns:1.3fr 1fr;gap:26px}
+.contains li{font-size:15.5px;margin-bottom:9px}
+.sidebox{background:var(--soft);border-radius:16px;padding:20px}
+.sidebox .bl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px}
+.sidebox .deliv{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:16px}
+.sidebox .team{font-size:13.5px;color:var(--slate)}
+.sidebox .team b{color:var(--navy)}
+
+/* journey stepper */
+.journey{display:flex;gap:0;padding:18px 46px 26px;border-top:1px solid var(--line);background:#fff;overflow-x:auto}
+.jst{flex:1;min-width:96px;text-align:center;position:relative;padding-top:22px}
+.jst:before{content:"";position:absolute;top:8px;left:0;right:0;height:3px;background:var(--line)}
+.jst:first-child:before{left:50%} .jst:last-child:before{right:50%}
+.jst .dot{position:absolute;top:1px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#cfd6dd;border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.jst.done .dot{background:var(--orange)} .jst.cur .dot{background:var(--red);box-shadow:0 0 0 4px #f7d5cf}
+.jst small{font-size:10.5px;color:var(--muted);display:block;line-height:1.25}
+.jst.cur small{color:var(--red);font-weight:800}
+
+/* client health check */
+.hcgrid{display:grid;grid-template-columns:230px 1fr;gap:34px;align-items:start}
+.gauge{width:210px;height:210px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;transition:background .6s ease}
+.gauge i{width:158px;height:158px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal}
+.gauge i b{font-size:52px;font-weight:800;line-height:1;color:var(--navy)}
+.gauge i span{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.bars .bar{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.bars .bar .nm{flex:0 0 190px;font-size:13.5px;font-weight:600}
+.bars .bar .tk{flex:1;height:14px;background:#eef1f6;border-radius:7px;overflow:hidden}
+.bars .bar .fl{display:block;height:100%;border-radius:7px;width:0;transition:width .6s ease,background .4s}
+.bars .bar .vv{flex:0 0 34px;text-align:right;font-weight:800;font-size:13px}
+.spot{background:#fbf4f1;border:1px solid #f2d9d2;border-radius:16px;padding:20px;margin-top:24px}
+.spot .sn{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:800}
+.spot h3{font-size:22px;margin:3px 0 6px;color:var(--navy)}
+.spot .good{font-size:14px;color:var(--slate);margin-bottom:10px}
+.spot .curq{font-size:16px;font-weight:600;color:var(--navy)}
+.risks{margin-top:24px}
+.risks .rl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:8px}
+.risk{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px}
+.risk .sc{font-size:20px;font-weight:800;flex:0 0 40px}
+.risk b{font-size:14px} .risk span{font-size:12px;color:var(--slate);display:block}
+
+/* recommended path strip (client) */
+.pathstrip{display:flex;gap:0;margin-top:26px;flex-wrap:wrap}
+.pathstrip .ps{flex:1;min-width:92px;text-align:center;font-size:11px;color:var(--muted);position:relative;padding-top:20px}
+.pathstrip .ps:before{content:"";position:absolute;top:7px;left:0;right:0;height:3px;background:var(--line)}
+.pathstrip .ps:first-child:before{left:50%} .pathstrip .ps:last-child:before{right:50%}
+.pathstrip .ps .d{position:absolute;top:0;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:#cfd6dd;border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.pathstrip .ps.hit .d{background:var(--orange)} .pathstrip .ps.start .d{background:var(--red);box-shadow:0 0 0 4px #f7d5cf}
+.pathstrip .ps.start{color:var(--red);font-weight:800}
+
+/* summary */
+.sumhead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.foot{padding:16px 46px;background:var(--navy);color:#9fb0be;font-size:11.5px}
+.prfoot{padding:14px 26px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}
+.prfoot button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 14px;font-size:12.5px;font-weight:700}
+.waiting{max-width:520px;margin:12vh auto;text-align:center;color:var(--slate)}
+.waiting h2{color:var(--navy);font-size:26px;margin-bottom:8px}
+.pill{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--red);border:1px solid #f2c9c1;background:#fcECe9;border-radius:20px;padding:4px 12px;margin-top:14px}
+@media print{
+  .pr .side,.prfoot,.modeToggle,.rownav{display:none!important}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+/* =========================================================
+   Synsera x Foxtcon One, Practice Presenter + Live Health Check
+   Single file. Two screens synced with BroadcastChannel.
+   No em dashes anywhere in copy.
+   ========================================================= */
+
+/* ---------- STAGE CONTENT (the practice, end to end) ---------- */
+const STAGES = [
+  { n:"Pre-Health Check", tag:"Complimentary", tagc:"#25845F",
+    tagline:"A short intake that tailors the Health Check to the client.",
+    contains:[
+      "A brief intake on the client environment and priorities",
+      "A quick scan across the nine security pillars",
+      "Confirmation of the right focus for the Health Check"
+    ],
+    deliv:"A tailored Health Check plan",
+    lead:"VJ Barot, Principal Architect",
+    engineers:"No engineers yet. Architect-led intake only.",
+    talk:"Frame this as the warm-up. It shows the client we tailor to them from the very first minute, at no cost." },
+
+  { n:"Health Check", tag:"Complimentary", tagc:"#25845F",
+    tagline:"A live posture scoring session across the nine pillars.",
+    contains:[
+      "A 45 to 60 minute live session with a senior architect",
+      "Posture scored live across the nine MCRA pillars",
+      "Top risks, quick wins, and the recommended next step"
+    ],
+    deliv:"A board-ready Security Readiness Summary the client keeps",
+    lead:"VJ Barot, Principal Architect",
+    engineers:"Architect-led. Engineers are not yet engaged, which keeps this lightweight and free.",
+    talk:"This is the value moment and the top of the funnel. The client watches their posture take shape and leaves with something they keep. Free, no obligation." },
+
+  { n:"Discovery", tag:"Scoped SOW", tagc:"#1C86C9",
+    tagline:"Where guided consulting begins.",
+    contains:[
+      "Maps business outcomes, sector pressures, and priorities",
+      "Aligns the client Microsoft investment to what matters",
+      "Confirms the priority pillars to assess"
+    ],
+    deliv:"Priorities and recommended next steps, with spend aligned",
+    lead:"VJ Barot, Principal Architect",
+    engineers:"Engineers are consulted for feasibility and effort, so the recommendations are grounded in what it takes to deliver.",
+    talk:"This is the first paid stage. Consulting starts here. Keep it about the client outcome, not tooling." },
+
+  { n:"Envisioning Workshop", tag:"Funded or SOW", tagc:"#F7941D",
+    tagline:"Sets direction through solution plays.",
+    contains:[
+      "Secure AI, data security, or threat protection plays",
+      "Microsoft-funded where the client qualifies",
+      "An agreed roadmap of Now, Next, and Later"
+    ],
+    deliv:"An agreed roadmap and solution plays",
+    lead:"Architect with Microsoft solution specialists",
+    engineers:"Engineers advise on effort and sequencing so the roadmap is realistic and costed.",
+    talk:"Where eligible this can be Microsoft-funded. That is a strong, low-friction way to deepen the engagement." },
+
+  { n:"Assessment", tag:"Scoped SOW", tagc:"#1C86C9",
+    tagline:"A white glove, evidence-based review of the priority pillars.",
+    contains:[
+      "Control-level testing on the priority pillars",
+      "Every finding evidenced, not assumed",
+      "A risk-prioritised remediation roadmap"
+    ],
+    deliv:"Where the client stands, evidenced, with a prioritised roadmap",
+    lead:"Architect leads, engineers run the evidence gathering",
+    engineers:"Engineers are now hands-on: they run the assessment tooling, gather evidence in the client tenant, and validate findings.",
+    talk:"The fee credits against implementation. That makes the yes easy and keeps momentum toward the build." },
+
+  { n:"Architecture", tag:"Scoped SOW", tagc:"#1C86C9",
+    tagline:"The target-state design, sequenced and SOW-ready.",
+    contains:[
+      "Target-state design aligned to MCRA and NIST",
+      "Phased and sequenced into an actionable plan",
+      "Mapped to the Microsoft investment and licensing"
+    ],
+    deliv:"A blueprint and an investment plan the client can act on",
+    lead:"VJ Barot designs, senior engineers validate",
+    engineers:"Senior engineers validate the design against the environment and shape the build plan.",
+    talk:"This produces the implementation SOW. It is the bridge from paper to delivery." },
+
+  { n:"Implementation", tag:"Scoped SOW", tagc:"#1C86C9",
+    tagline:"The senior-led build, with no hand-off.",
+    contains:[
+      "Delivered inside the client own tenant",
+      "Live controls, configuration runbooks, and enablement",
+      "Quality-gated with weekly status"
+    ],
+    deliv:"Implemented controls, runbooks, and knowledge transfer",
+    lead:"Engineers build, VJ assures as Technical Project Lead, PMO tracks",
+    engineers:"This is the engineers stage. Pranav leads engineering delivery, the team configures and automates, VJ assures every phase, and the PMO tracks each milestone. No hand-off.",
+    talk:"Emphasise continuity: the architect who scoped it assures it. This is where the offshore concern is answered by senior oversight." },
+
+  { n:"Manage", tag:"Recurring", tagc:"#D81E05",
+    tagline:"Optional co-managed operations that keep posture improving.",
+    contains:[
+      "Co-managed 24 by 7 detection and response",
+      "Quarterly business reviews that surface the next gap",
+      "Architecture oversight retained by VJ"
+    ],
+    deliv:"Ongoing outcomes and QBRs that seed the next SOW",
+    lead:"Managed SOC engineers run operations, architect retains oversight",
+    engineers:"Managed detection and response engineers run 24 by 7 operations through a vetted SOC, with VJ retaining architecture oversight and leading the QBRs.",
+    talk:"This is the annuity and the flywheel. Each QBR points to the next scoped step, so the account keeps producing." }
+];
+
+/* ---------- PILLARS (live health check) ---------- */
+const PILLARS = [
+  { id:"identity", name:"Identity and Access", good:"MFA everywhere, no standing admins, governed access.",
+    qs:["Is multifactor enforced for all users, including admins, via Conditional Access?","Is privileged access just-in-time (PIM) with no standing global admins?","Are access reviews and identity governance in place?"] },
+  { id:"endpoints", name:"Endpoints", good:"All devices managed, health gates access, Defender deployed.",
+    qs:["Are all devices enrolled and managed in Intune with compliance policies?","Is device health used to gate access to company resources?","Is Defender for Endpoint deployed and monitored?"] },
+  { id:"apps", name:"Apps and Workloads", good:"Apps inventoried and governed, shadow IT discovered.",
+    qs:["Do you have an inventory and governance of SaaS and line-of-business apps?","Is Defender for Cloud Apps discovering shadow IT?","Are app permissions and OAuth consents reviewed?"] },
+  { id:"data", name:"Data and Governance", good:"Sensitive data classified, DLP everywhere, location known.",
+    qs:["Is sensitive data classified and labeled in Purview beyond email?","Is DLP applied across endpoints, cloud, and email?","Do you know where your most sensitive data lives?"] },
+  { id:"infra", name:"Infrastructure", good:"Workloads protected, posture managed, patching consistent.",
+    qs:["Are servers and cloud workloads protected with Defender for Cloud and Servers?","Is there continuous secure posture and vulnerability management?","Is patching consistent and measured?"] },
+  { id:"secops", name:"Security Operations", good:"Unified SIEM, 24 by 7 coverage, automated response.",
+    qs:["Do you have a unified SIEM with Sentinel in the Defender portal?","Is there 24 by 7 monitoring and response coverage?","Is response partly automated with playbooks?"] },
+  { id:"network", name:"Network", good:"Identity-based access, off legacy VPN, segmented.",
+    qs:["Are you moving off legacy VPN to Global Secure Access?","Is access to apps identity-based and least-privilege?","Is the network segmented to limit blast radius?"] },
+  { id:"ai", name:"AI and Copilot", good:"Oversharing controlled, agents governed, AI data visible.",
+    qs:["Before broad Copilot rollout, is data oversharing understood and controlled?","Are AI agents governed with Entra Agent ID?","Is Purview DSPM for AI giving you visibility into AI data use?"] },
+  { id:"people", name:"People and Compliance", good:"Awareness in place, framework aligned, insider risk managed.",
+    qs:["Is there ongoing security awareness training?","Are you aligned to a framework (NIST, ISO 27001, SOC 2) with evidence?","Is insider risk managed?"] }
+];
+
+/* ---------- state + sync ---------- */
+const KEY="synsera-pp-state";
+const CH = ("BroadcastChannel" in window) ? new BroadcastChannel("synsera-practice-presenter") : null;
+const params = new URLSearchParams(location.search);
+const SCREEN = params.get("screen"); // practitioner | client | null
+
+let state = load() || {
+  mode:"walkthrough",   // walkthrough | healthcheck
+  stageIndex:0,
+  client:"Northbridge Insurance",
+  hc:{ phase:"select", priorities:[], answers:{}, current:PILLARS[0].id }
+};
+
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
+function save(broadcast){
+  localStorage.setItem(KEY, JSON.stringify(state));
+  if(broadcast && CH) CH.postMessage(state);
+}
+function apply(newState){ state=newState; render(); }
+if(CH) CH.onmessage = e => apply(e.data);
+window.addEventListener("storage", e => { if(e.key===KEY && e.newValue) apply(JSON.parse(e.newValue)); });
+
+/* ---------- scoring helpers ---------- */
+const PCT=[0,33,67,100];
+function pillarScore(id){
+  const a=state.hc.answers[id]; if(!a) return null;
+  const scored=a.filter(v=>v!==null&&v!==undefined);
+  if(!scored.length) return null;
+  return Math.round(scored.reduce((s,v)=>s+PCT[v],0)/scored.length);
+}
+function overall(){
+  const vals=PILLARS.map(p=>pillarScore(p.id)).filter(v=>v!==null);
+  if(!vals.length) return null;
+  return Math.round(vals.reduce((s,v)=>s+v,0)/vals.length);
+}
+function band(v){ if(v===null) return {c:"#cfd6dd",l:"Not scored"}; if(v<40) return {c:"var(--critical)",l:"Critical"}; if(v<=70) return {c:"var(--amber)",l:"Developing"}; return {c:"var(--green)",l:"Strong"}; }
+function topRisks(){
+  return PILLARS.map(p=>({p,s:pillarScore(p.id)})).filter(x=>x.s!==null).sort((a,b)=>a.s-b.s).slice(0,3);
+}
+function recommendation(){
+  const ov=overall(); const recs=[];
+  const ai=pillarScore("ai"), data=pillarScore("data");
+  if((ai!==null&&ai<=70)||(data!==null&&data<=70)) recs.push("An Envisioning Workshop on Secure AI or Data Security, often Microsoft-funded.");
+  PILLARS.forEach(p=>{const s=pillarScore(p.id); if(s!==null&&s<40) recs.push("A White Glove Assessment on "+p.name+", then Implementation.");});
+  let start="Discovery";
+  if(ov===null){ recs.unshift("Complete the Health Check to produce a posture baseline."); }
+  else if(ov<40){ recs.unshift("Lead with activating what is already owned in E5, then a Discovery to align priorities."); start="Discovery"; }
+  else if(ov<=70){ recs.unshift("A Discovery plus a targeted Assessment on the two lowest pillars."); start="Assessment"; }
+  else { recs.unshift("Architecture and Managed operations to harden and sustain."); start="Architecture"; }
+  return {recs:[...new Set(recs)], start};
+}
+
+/* ---------- render dispatch ---------- */
+const app=document.getElementById("app");
+function render(){
+  if(SCREEN==="practitioner") renderPractitioner();
+  else if(SCREEN==="client") renderClient();
+  else renderLaunch();
+}
+function esc(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+function header(right){
+  return '<div class="hdr"><div class="brand">synsera <b>x Foxtcon One</b><small>Microsoft Security Practice</small></div><div class="who">'+right+'</div></div>';
+}
+
+/* ---------- launch ---------- */
+function renderLaunch(){
+  app.innerHTML = header("Practice Presenter") +
+  '<div class="launch"><h1>Practice Presenter</h1>'+
+  '<p>Open one screen to drive the session, and one to share with the client. They stay in sync.</p>'+
+  '<div class="cards">'+
+    '<div class="lc p"><h3>Practitioner screen</h3><p>Your private control panel. Walk the eight stages or run a live Health Check, with talking points and controls.</p><button class="btn az" onclick="openScreen(\'practitioner\')">Open practitioner screen</button></div>'+
+    '<div class="lc c"><h3>Client screen</h3><p>The clean, brand-forward view to project or share. It mirrors whatever you drive.</p><button class="btn rd" onclick="openScreen(\'client\')">Open client screen</button></div>'+
+  '</div>'+
+  '<p class="hint">Tip: open the client screen, drag it to a second monitor or share it over Teams, then drive from the practitioner screen.</p></div>';
+}
+function openScreen(s){ window.open(location.pathname+"?screen="+s, "_blank"); }
+
+/* ---------- practitioner ---------- */
+function renderPractitioner(){
+  const side = '<div class="side">'+
+    '<div class="modeToggle">'+
+      '<button class="'+(state.mode==="walkthrough"?"on":"")+'" onclick="setMode(\'walkthrough\')">Practice walkthrough</button>'+
+      '<button class="'+(state.mode==="healthcheck"?"on":"")+'" onclick="setMode(\'healthcheck\')">Live Health Check</button>'+
+    '</div>'+
+    '<div class="cliField"><input value="'+esc(state.client)+'" oninput="setClient(this.value)" aria-label="Client name"></div>'+
+    (state.mode==="walkthrough"? stageNav() : pillarNav())+
+  '</div>';
+  const main = '<div class="main">'+ (state.mode==="walkthrough"? stagePanel() : hcPanel()) +'</div>';
+  app.innerHTML = header("Practitioner screen")+'<div class="pr">'+side+main+'</div>'+
+    '<div class="prfoot"><button onclick="openScreen(\'client\')">Open client screen</button><button onclick="resetAll()">Reset session</button></div>';
+}
+function stageNav(){
+  return '<div class="navlbl">The 8 stages</div>'+ STAGES.map((s,i)=>
+    '<button class="snav '+(i===state.stageIndex?"on":"")+'" onclick="goStage('+i+')"><span class="ix">'+(i+1)+'</span><span>'+s.n+'</span><span class="fg">'+s.tag.split(" ")[0]+'</span></button>'
+  ).join("");
+}
+function stagePanel(){
+  const s=STAGES[state.stageIndex];
+  return '<div class="crumb">Stage '+(state.stageIndex+1)+' of 8</div>'+
+    '<h2>'+s.n+'</h2><span class="tag" style="background:'+s.tagc+'">'+s.tag+'</span>'+
+    '<p class="lead">'+s.tagline+'</p>'+
+    '<div class="lbl">Talking points</div><div class="talk">'+s.talk+'</div>'+
+    '<div class="lbl">What this stage contains</div><ul class="ck">'+s.contains.map(c=>'<li>'+c+'</li>').join("")+'</ul>'+
+    '<div class="lbl">How the team is involved</div><div class="eng"><div class="engc"><b>Who leads</b>'+s.lead+'</div><div class="engc"><b>Engineers</b>'+s.engineers+'</div></div>'+
+    '<div class="lbl">Deliverable</div><ul class="ck"><li>'+s.deliv+'</li></ul>'+
+    '<div class="rownav">'+
+      (state.stageIndex>0?'<button onclick="goStage('+(state.stageIndex-1)+')">Previous</button>':'')+
+      (state.stageIndex<STAGES.length-1?'<button class="prim" onclick="goStage('+(state.stageIndex+1)+')">Next stage</button>':'<button class="prim" onclick="setMode(\'healthcheck\')">Show the live Health Check</button>')+
+    '</div>';
+}
+function pillarNav(){
+  const order=orderedPillars();
+  return '<div class="navlbl">Pillars '+(state.hc.priorities.length?"(priorities first)":"")+'</div>'+
+    order.map(p=>{const s=pillarScore(p.id);const b=band(s);
+      return '<button class="snav '+(p.id===state.hc.current?"on":"")+'" onclick="goPillar(\''+p.id+'\')"><span class="ix" style="background:'+(s!==null?b.c:"")+';color:#fff">'+(s!==null?s:"-")+'</span><span>'+p.name+'</span>'+(state.hc.priorities.includes(p.id)?'<span class="fg">priority</span>':'')+'</button>';
+    }).join("")+
+    '<div style="padding:12px 18px"><button class="snav" style="border-left-color:var(--orange);color:#fff;font-weight:700" onclick="goSummary()">View summary</button></div>';
+}
+function orderedPillars(){
+  const pri=state.hc.priorities;
+  return [...PILLARS].sort((a,b)=>{const ai=pri.includes(a.id)?0:1, bi=pri.includes(b.id)?0:1; return ai-bi;});
+}
+function hcPanel(){
+  if(state.hc.phase==="select") return hcSelect();
+  if(state.hc.phase==="summary") return hcSummaryPr();
+  return hcAssess();
+}
+function hcSelect(){
+  return '<div class="crumb">Live Health Check</div><h2>Choose priority pillars</h2>'+
+    '<p class="lead">Ask the client which areas matter most right now. Pick 2 or 3. We drive those first.</p>'+
+    '<div class="chips">'+PILLARS.map(p=>'<button class="chip '+(state.hc.priorities.includes(p.id)?"on":"")+'" onclick="togglePriority(\''+p.id+'\')">'+p.name+'</button>').join("")+'</div>'+
+    '<div class="rownav"><button class="prim" onclick="startAssess()">Start the Health Check</button></div>';
+}
+function hcAssess(){
+  const p=PILLARS.find(x=>x.id===state.hc.current);
+  const ans=state.hc.answers[p.id]||[null,null,null];
+  const rec=recommendation();
+  const qs=p.qs.map((q,i)=>{
+    const buttons=["Not started","Ad hoc","Defined","Optimized"].map((lb,v)=>
+      '<button data-v="'+v+'" class="'+(ans[i]===v?"on":"")+'" onclick="setAnswer(\''+p.id+'\','+i+','+v+')">'+lb+'</button>').join("");
+    return '<div class="q"><p class="qt">'+q+'</p><div class="mat">'+buttons+'</div></div>';
+  }).join("");
+  const idx=PILLARS.findIndex(x=>x.id===p.id);
+  return '<div class="crumb">Live Health Check</div><h2>'+p.name+'</h2>'+
+    '<p class="lead">What good looks like: '+p.good+'</p>'+ qs +
+    '<div class="lbl">Recommendation so far</div><div class="recbox"><div class="rl">Recommended path</div><ul>'+rec.recs.map(r=>'<li>'+r+'</li>').join("")+'</ul></div>'+
+    '<div class="rownav"><button onclick="goPillar(\''+PILLARS[(idx+PILLARS.length-1)%PILLARS.length].id+'\')">Previous</button><button class="prim" onclick="goPillar(\''+PILLARS[(idx+1)%PILLARS.length].id+'\')">Next pillar</button><button onclick="goSummary()">Summary</button></div>';
+}
+function hcSummaryPr(){
+  const ov=overall(); const rec=recommendation();
+  return '<div class="crumb">Live Health Check</div><h2>Readiness summary ready</h2>'+
+    '<p class="lead">Overall posture '+(ov===null?"not yet scored":ov+" of 100, "+band(ov).l)+'. The client screen shows the full summary.</p>'+
+    '<div class="recbox"><div class="rl">Recommended next step</div><ul>'+rec.recs.map(r=>'<li>'+r+'</li>').join("")+'</ul></div>'+
+    '<div class="rownav"><button onclick="state.hc.phase=\'assess\';save(true);render()">Back to scoring</button><button class="prim" onclick="downloadJSON()">Download answers</button></div>';
+}
+
+/* ---------- client ---------- */
+function renderClient(){
+  let body;
+  if(state.mode==="walkthrough") body=clientStage();
+  else body=clientHC();
+  app.innerHTML = header(esc(state.client))+'<div class="cl">'+body+'</div>';
+}
+function clientStage(){
+  const s=STAGES[state.stageIndex];
+  const journey='<div class="journey">'+STAGES.map((st,i)=>
+    '<div class="jst '+(i<state.stageIndex?"done":"")+' '+(i===state.stageIndex?"cur":"")+'"><span class="dot"></span><small>'+st.n+'</small></div>').join("")+'</div>';
+  return '<div class="body"><div class="kick">The practice, stage '+(state.stageIndex+1)+' of 8</div>'+
+    '<h1>'+s.n+'</h1><div class="tagline">'+s.tagline+'</div>'+
+    '<div class="stagecard"><div><div class="lbl" style="color:var(--red)">What this stage contains</div><ul class="ck contains">'+s.contains.map(c=>'<li>'+c+'</li>').join("")+'</ul></div>'+
+    '<div class="sidebox"><div class="bl">Deliverable</div><div class="deliv">'+s.deliv+'</div>'+
+    '<div class="bl">Who is involved</div><div class="team"><b>'+s.lead+'</b><br>'+s.engineers+'</div></div></div>'+
+    '</div>'+journey+
+    '<div class="foot">Synsera, Microsoft Security Practice, in partnership with Foxtcon One, prepared for '+esc(state.client)+'</div>';
+}
+function clientHC(){
+  if(state.hc.phase==="select"){
+    return '<div class="body"><div class="waiting"><div class="kick" style="color:var(--red)">Live Health Check</div><h2>Let us focus where it matters</h2><p>Choose the areas most important to you and we will start there. Your posture will build here as we go.</p>'+
+      (state.hc.priorities.length?'<div class="pill">'+state.hc.priorities.map(id=>PILLARS.find(p=>p.id===id).name).join(" &middot; ")+'</div>':'')+'</div></div>';
+  }
+  const ov=overall(); const b=band(ov);
+  const deg=ov===null?0:Math.round(ov*3.6);
+  const gauge='<div class="gauge" style="background:conic-gradient('+b.c+' 0 '+deg+'deg,#eef1f6 '+deg+'deg 360deg)"><i><b>'+(ov===null?"-":ov)+'</b><span>of 100</span></i></div>';
+  const bars='<div class="bars">'+PILLARS.map(p=>{const s=pillarScore(p.id);const bb=band(s);
+    return '<div class="bar"><span class="nm">'+p.name+'</span><span class="tk"><span class="fl" style="width:'+(s===null?0:s)+'%;background:'+(s===null?"#eef1f6":bb.c)+'"></span></span><span class="vv" style="color:'+(s===null?"var(--muted)":bb.c)+'">'+(s===null?"-":s)+'</span></div>';
+  }).join("")+'</div>';
+  const cur=PILLARS.find(p=>p.id===state.hc.current);
+  const spot = state.hc.phase==="assess" ? '<div class="spot"><div class="sn">Now discussing</div><h3>'+cur.name+'</h3><div class="good">What good looks like: '+cur.good+'</div></div>' : '';
+  const risks=topRisks();
+  const risksHtml = risks.length? '<div class="risks"><div class="rl">Top risks to address</div>'+risks.map(r=>{const bb=band(r.s);return '<div class="risk"><span class="sc" style="color:'+bb.c+'">'+r.s+'</span><div><b>'+r.p.name+'</b><span>'+bb.l+'. '+r.p.good+'</span></div></div>';}).join("")+'</div>':'';
+  const rec=recommendation();
+  const stagesOrder=["Health Check","Discovery","Envisioning Workshop","Assessment","Architecture","Implementation","Manage"];
+  const path='<div class="lbl" style="color:var(--red);margin-top:26px">Your recommended path</div><div class="pathstrip">'+stagesOrder.map((nm,i)=>{
+    const isStart = nm===rec.start; const hit = i===0 || nm===rec.start;
+    return '<div class="ps '+(i===0?"hit":"")+' '+(isStart?"start":"")+'"><span class="d"></span>'+nm+'</div>';
+  }).join("")+'</div>';
+  const summaryMode = state.hc.phase==="summary";
+  const head = summaryMode? '<div class="sumhead"><div><div class="kick" style="color:var(--red)">Security Readiness Summary</div><h1 style="font-size:30px">'+esc(state.client)+'</h1></div><div class="pill">'+(ov===null?"":band(ov).l)+'</div></div>' :
+    '<div class="kick" style="color:var(--red)">Live Health Check</div><h1 style="font-size:30px;margin-bottom:18px">'+esc(state.client)+'</h1>';
+  return '<div class="body">'+head+'<div class="hcgrid">'+gauge+'<div>'+bars+'</div></div>'+ spot + risksHtml + (summaryMode?(risksHtml?'':'')+'<div class="recbox" style="margin-top:22px"><div class="rl">Recommended next step</div><ul>'+rec.recs.map(r=>'<li>'+r+'</li>').join("")+'</ul></div>':'') + path +'</div>'+
+    '<div class="foot">Synsera, Microsoft Security Practice, in partnership with Foxtcon One, prepared for '+esc(state.client)+'</div>';
+}
+
+/* ---------- actions ---------- */
+function setMode(m){ state.mode=m; save(true); render(); }
+function setClient(v){ state.client=v; save(true); }
+function goStage(i){ state.stageIndex=i; save(true); render(); }
+function goPillar(id){ state.hc.current=id; state.hc.phase="assess"; save(true); render(); }
+function togglePriority(id){ const p=state.hc.priorities; const ix=p.indexOf(id); if(ix>=0)p.splice(ix,1); else if(p.length<3)p.push(id); save(true); render(); }
+function startAssess(){ state.hc.phase="assess"; if(state.hc.priorities.length) state.hc.current=state.hc.priorities[0]; save(true); render(); }
+function setAnswer(pid,qi,v){ if(!state.hc.answers[pid]) state.hc.answers[pid]=[null,null,null]; state.hc.answers[pid][qi]=v; save(true); render(); }
+function goSummary(){ state.hc.phase="summary"; save(true); render(); }
+function resetAll(){ if(!confirm("Reset the whole session?")) return; localStorage.removeItem(KEY); state={mode:"walkthrough",stageIndex:0,client:"Northbridge Insurance",hc:{phase:"select",priorities:[],answers:{},current:PILLARS[0].id}}; save(true); render(); }
+function downloadJSON(){ const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="health-check-"+state.client.replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".json"; a.click(); }
+window.openScreen=openScreen;window.setMode=setMode;window.setClient=setClient;window.goStage=goStage;window.goPillar=goPillar;window.togglePriority=togglePriority;window.startAssess=startAssess;window.setAnswer=setAnswer;window.goSummary=goSummary;window.resetAll=resetAll;window.downloadJSON=downloadJSON;
+
+render();
+</script>
+</body>
+</html>
