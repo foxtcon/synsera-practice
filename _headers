@@ -1,6 +1,13 @@
+# Synsera x Foxtcon partner hub - Cloudflare Pages headers
+# Optional CSP: enable only after Cloudflare Access is on.
+# Hub pages use inline CSS/JS, so any CSP must allow 'unsafe-inline'
+# for script-src and style-src or the hub will break. Example:
+# Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   X-Robots-Tag: noindex, nofollow
+

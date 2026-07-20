@@ -54,7 +54,10 @@ h2:first-child{margin-top:0}
   .donut{margin:0 auto 16px}
   .meta{text-align:left!important}
 }
-</style></head><body>
+
+html.client-export .brand b{display:none}
+html.client-export .partner-mark{display:none}
+</style><script>if(/(?:^|[?&])client=1(?:&|$)/.test(location.search))document.documentElement.classList.add("client-export");</script></head><body>
 <div class="page">
 <div class="bar">
   <div>
