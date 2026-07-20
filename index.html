@@ -684,7 +684,7 @@
   nav.innerHTML=NAV.map((gr,gi)=>{
     const panelId='navpanel-'+gi;
     return `<div class="navgroup collapsed" data-group="${gr.g}"><button type="button" class="ngh" aria-expanded="false" aria-controls="${panelId}"><span class="ngt">${gr.g}</span><span class="cr" aria-hidden="true">&#9660;</span></button><div class="nitems" id="${panelId}" role="group" aria-label="${gr.g}">${gr.items.map(it=>`<button type="button" class="nitem ${it[2]}" data-id="${it[0]}"><span class="dot" aria-hidden="true"></span><span>${it[1]}</span></button>`).join('')}</div></div>`;
-  }).join('');
+  }).join('') + `<div class="navgroup collapsed" data-group="Beyond Security"><button type="button" class="ngh" aria-expanded="false" aria-controls="navpanel-beyond"><span class="ngt">Beyond Security</span><span class="cr" aria-hidden="true">&#9660;</span></button><div class="nitems" id="navpanel-beyond" role="group" aria-label="Beyond Security"><a class="nitem" href="beyond-security.html"><span class="dot" aria-hidden="true"></span><span>Digital Services</span></a></div></div>`;
   function setGroupExpanded(groupEl,open){
     groupEl.classList.toggle('collapsed',!open);
     const btn=groupEl.querySelector('.ngh');
@@ -699,7 +699,7 @@
     const g=h.parentElement;
     setGroupExpanded(g,g.classList.contains('collapsed'));
   }));
-  nav.querySelectorAll('.nitem').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.id)));
+  nav.querySelectorAll('button.nitem').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.id)));
   // ---------- content ----------
   const pane=document.getElementById('pane');
   function stagePanel(i){const s=stages[i];const DOC=["Synsera_Stage0_Readiness_Profile_Template.html","Synsera_Deliverable_1_HealthCheck.html","Synsera_Deliverable_Discovery.html","Synsera_Deliverable_2_Envisioning.html","Synsera_Deliverable_3_Assessment.html","Synsera_Deliverable_4_Architecture.html","Synsera_Deliverable_5_Implementation.html","Synsera_Deliverable_6_Managed.html"];const EX=[["Licensing and entitlements","High-level posture signals across the pillars"],["Live posture across the nine pillars","E5 capability utilisation","Top risks and quick wins"],["Business outcomes and drivers","Regulatory and sector pressures","Current-state and priorities"],["Solution plays and target scenarios","Microsoft funding eligibility","Roadmap direction"],["Control-level posture on the priority pillars","Configuration and policy gaps","Compliance and framework alignment"],["Target-state design options","Sequencing and dependencies","Investment and licensing fit"],["Configuration and deployment","Validation against the design","Enablement and handover"],["Ongoing detections and posture drift","Trends over time","Next-quarter priorities"]][i]||[];return `<span class="kick az">MCRA services path &middot; stage ${i+1} of ${stages.length} &middot; going deeper</span><h2>${s.t}</h2><span class="st" style="background:${s.tagc}">${s.tag}</span><p class="lead" style="margin-top:8px">${s.d}</p><div class="mcols"><div><div class="lbl2">The outcome your client sees</div>${artifact(s.art)}<p class="artnote">Illustrative outcome under the Synsera brand, delivered by Foxtcon One. Each deliverable shows where the client stands and the recommended next step, aligned to their Microsoft investment.</p></div><div><div class="valuebox"><div class="vl">Value at this stage</div><p>${s.value}</p></div><div class="lbl2">What we do</div><ul class="ck">${s.does.map(x=>`<li>${x}</li>`).join('')}</ul><div class="lbl2">What we explore in the environment</div><ul class="ck">${EX.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div class="stagemeta"><div class="sm"><b>Who leads</b><span>${s.who}</span></div><div class="sm"><b>Timing</b><span>${s.timing}</span></div><div class="sm"><b>Commercial</b><span>${s.commercial}</span></div></div><div class="g2" style="margin-top:14px"><div class="jbox client"><b>Client receives</b>${s.clientGets}</div><div class="jbox syn"><b>Synsera receives</b>${s.synGets}</div></div><div class="deliv" style="margin-top:14px"><b>Deliverable</b>${s.del}</div>${DOC[i]?`<a class="samplelink" href="${DOC[i]}" onclick="openDoc('${DOC[i]}');return false">View the sample deliverable this client receives &rarr;</a>`:''}`;}
@@ -726,7 +726,81 @@
     if(id==='portal')return `<div class="abar az"></div><span class="kick az">Working together &middot; the SaaS platform</span><h2>The Foxtcon Security Portal</h2><p class="lead">Think of it as an elevation of a project tracker like Smartsheet: a live view of exactly where each client project stands, in Phase 1 build now. Partner and client logins, real-time status, and the ability to raise questions and reprioritise, with our team assisting.</p>${portalHTML}<div class="g3" style="margin-top:24px"><div class="card"><h3><span class="num az">1</span>Partner login</h3><p>Synsera sees every client project, its stage, deliverables, and next actions, across the whole account base.</p></div><div class="card"><h3><span class="num az">2</span>Client login</h3><p>Where useful, the client gets a view of exactly where their project stands and what comes next.</p></div><div class="card"><h3><span class="num az">3</span>Live status</h3><p>An elevation of a project tracker: real-time stage, RAG status, milestones, and the deliverable at each step.</p></div><div class="card"><h3><span class="num az">4</span>Raise &amp; reprioritise</h3><p>Raise questions and change priorities in the portal; our team picks them up and assists, no long email chains.</p></div><div class="card"><h3><span class="num az">5</span>One place, end to end</h3><p>Project management through delivery in one view: PMO, architect, engineer, and account management aligned.</p></div><div class="card"><h3><span class="num az">6</span>Full transparency</h3><p>You and the client always know where things stand, so trust stays high and decisions stay fast.</p></div></div>`;
     if(id==='contact')return `<div class="abar red"></div><span class="kick red">Get started</span><h2>Start with a mock. Then lift Project A and Project B.</h2><p class="lead">A practical sequence Foxtcon recommends before live client delivery: align Synsera's team on the Health Check flow and sample outcomes, then open complimentary Health Check or first scoped work on Project A, and in parallel scope Project B expansion. Synsera owns both clients; Foxtcon is the white-label delivery engine on each.</p><div class="g3" style="margin-top:22px"><div class="card"><h3><span class="num red">1</span>Mock delivery session</h3><p>About 60 minutes with Synsera's internal team. Walk Pre-Health Check intake, the interview-based Health Check, and a sample Readiness Summary: roles and process, not a live client estate.</p></div><div class="card"><h3><span class="num red">2</span>Project A entry</h3><p>Complimentary Health Check, or first scoped SOW under Synsera's brand. Foxtcon can take governance and Copilot-readiness work through Assessment, Architecture, and Implementation.</p></div><div class="card"><h3><span class="num az">3</span>Project B expansion</h3><p>In parallel, Foxtcon can scope catalog foundations into DLP and Insider Risk Management. Foxtcon can own Assessment through Implementation white-label under Synsera.</p></div></div><div class="lbl2" style="margin-top:26px">Mock session agenda</div><div class="g2" style="margin-top:10px"><div class="card"><h3>What we walk</h3><ul class="ck"><li>Pre-Health Check intake and nine-pillar quick scan</li><li>Health Check interview flow (45 to 60 min)</li><li>Sample Security Readiness Summary the client keeps</li><li>Where complimentary ends and SOW begins</li><li>How Project A and Project B map onto the path</li></ul></div><div class="card"><h3>Who attends (roles)</h3><ul class="ck"><li>Synsera: relationship / delivery sponsors as Synsera chooses</li><li>Foxtcon: Principal Architect leads the walkthrough</li><li>Optional: Synsera technical lead for Health Check Q&amp;A</li><li>No named client estate detail required in the mock</li></ul></div></div><div class="g2" style="margin-top:16px"><div class="jbox syn"><b>Synsera brings</b>The client relationships, commercials, and brand. Synsera decides when Project A and Project B go live.</div><div class="jbox client"><b>Foxtcon delivers</b>Senior Microsoft Security depth white-label under Synsera: mock first, then Health Check or scoped SOW, with Assessment through Implementation ownership where agreed.</div></div><div class="valuebox" style="margin-top:22px"><div class="vl">Commercial reminder</div><p>Pre-Health Check and Health Check are complimentary. Discovery onward is scoped and paid under SOW. Day rate or fixed price under Synsera's client commercials; Foxtcon invoices Synsera at a net rate.</p></div><div class="ctas"><button class="btn red" onclick="bookCall()">Book the Synsera mock session</button></div><p class="ctasub"><a onclick="healthCheck()">Request Project A Health Check</a> · <a onclick="pick('first')">Project A</a> · <a onclick="pick('utilities')">Project B</a></p>`;
     if(id==='site')return `<div class="abar red"></div><span class="kick red">Ready for your website</span><h2>The client-facing page, built to convert</h2><p class="lead">A section you can lift straight onto the Synsera website. It leads with the client's problem, shows the value fast, and drives them to book the complimentary Health Check.</p><div class="siteframe"><div class="sfbar"><span class="sfdot"></span><span class="sfdot"></span><span class="sfdot"></span>&nbsp; synsera.co.uk / microsoft-security</div><div class="sfbody"><span class="kick red">Microsoft Security, done properly</span><h2 class="sfhero">You already pay for world-class Microsoft security. Are you actually using it?</h2><p class="lead">Most organisations run under 40% of the security in their Microsoft E5, while Copilot and agents quietly expand the risk surface. Start with a complimentary Microsoft Security Health Check: a principal architect shows you exactly where you stand and what to do next. Governance-led. Proportionate. Current with Microsoft Security in 2026, including Agent ID, unified DSPM, and SecOps in the Defender portal. The Health Check is complimentary; later stages are scoped under SOW.</p><div class="offer"><div class="offer-l"><div class="ot">Your complimentary Health Check</div><ul class="ck"><li>A live 45 to 60 minute session with a senior architect</li><li>Your posture scored across the nine security pillars</li><li>A board-ready Security Readiness Summary you keep</li><li>Your top risks, quick wins, and the recommended next step</li></ul></div><div class="offer-r"><div class="obig">&pound;0</div><div class="osub">Health Check only &middot; no obligation</div><button class="btn red" onclick="healthCheck()">Book your complimentary Health Check</button></div></div><div class="truststrip"><span><span class="tic">${PICO.SO}</span><b>18+</b> years in Microsoft security</span><span><span class="tic">${PICO.PC}</span><b>Senior-led</b> throughout</span><span><span class="tic">${PICO.ID}</span><b>Your data</b> stays in your tenant</span><span><span class="tic">${PICO.AI}</span><b>Current</b> with Microsoft 2026</span><span><span class="tic">${PICO.DA}</span><b>Governance-led</b> AI and security</span></div><div class="g3" style="margin-top:22px"><div class="card"><h3><span class="vico">${PICO.AI}</span>Built for the AI era</h3><p>Adopt Copilot and agents safely, with the data and identity foundations ready first. Current with Microsoft in 2026, including Agent ID, Agent 365, and unified DSPM.</p></div><div class="card"><h3><span class="vico">${PICO.SO}</span>Senior and accountable</h3><p>A principal architect leads every engagement. Your data never leaves your own Microsoft tenant. Delivery is assured, not handed off to juniors.</p></div><div class="card"><h3><span class="vico">${STAGEICO.free}</span>From a complimentary Health Check to a full programme</h3><p>Start free with the Health Check. Discovery, Assessment, and Implementation are scoped and paid under SOW, only as far as you choose.</p></div></div><div style="margin-top:30px"><span class="kick red">What we cover</span><h3 style="font-size:22px;letter-spacing:-.3px;margin:2px 0 6px">Nine security domains, aligned to Microsoft</h3><p class="lead" style="font-size:14px">From identity and data to AI, we cover the full Microsoft Cybersecurity Reference Architecture, so nothing is left exposed. The Health Check scores you across all nine.</p><p class="hint">Click a pillar to explore</p><div class="pill-g">${PILLARDEF.map(p=>pillarCard(p,false,true)).join('')}</div></div><div class="ctas" style="margin-top:24px;justify-content:center;display:flex"><button class="btn red" onclick="healthCheck()">See where you stand. Book your complimentary Health Check</button></div><p class="hint" style="margin-top:18px;text-align:center">Microsoft Security Practice &middot; Synsera</p></div></div><p class="hint" style="margin-top:14px">Lift this section onto your site, or ask us to export it as a standalone page for you.</p>`;
-    if(RICH[id])return richPanel(RICH[id]);
+    if(RICH[id]){
+      const _rich=richPanel(RICH[id]);
+      if(id==='commercial')return _rich+`
+<!--
+  =========================================================================
+  BEYOND SECURITY - teaser section for index.html (the practice hub)
+  Paste this block INTO index.html, just after the Commercial / Pipeline
+  section and before the client-facing / Fox AI section.
+  It links out to the full standalone page: beyond-security.html
+  Self-contained: only inline styles + the hub's existing CSS variables.
+  If your hub does NOT define these CSS variables, the inline fallbacks
+  below still render correctly.
+  =========================================================================
+-->
+<section id="beyond-security" style="max-width:1060px;margin:64px auto;padding:0 24px;">
+
+  <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#1C86C9;margin-bottom:14px;">
+    <span style="width:7px;height:7px;border-radius:50%;background:#D81E05;"></span> Beyond Security
+  </div>
+
+  <h2 style="font-size:28px;line-height:1.15;letter-spacing:-.4px;margin:0 0 12px;color:#0D1B2A;font-weight:800;">
+    The full digital engine behind Synsera.
+  </h2>
+
+  <p style="font-size:16.5px;color:#5c6b7a;max-width:760px;margin:0 0 26px;line-height:1.55;">
+    Microsoft security is where we go deepest together. It is rarely where a client's needs end.
+    Beyond security, Foxtcon One brings a complete digital delivery studio, powered by Suvysoft, so Synsera can say
+    yes to the website, the app, the data platform, and the AI, all under the same relationship and the same
+    commercial model your clients already trust.
+  </p>
+
+  <!-- Four line cards -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px;">
+
+    <a href="beyond-security.html#digital-growth" style="text-decoration:none;border:1px solid #e6ebf1;border-left:4px solid #1C86C9;border-radius:12px;padding:18px 16px;background:#fff;transition:box-shadow .15s,transform .12s;display:block;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:#1C86C9;text-transform:uppercase;margin-bottom:6px;">8 services</div>
+      <div style="font-size:16px;font-weight:700;color:#0D1B2A;margin-bottom:4px;">Digital Growth</div>
+      <div style="font-size:13px;color:#5c6b7a;line-height:1.45;">Websites, SEO and GEO, marketing, hosting.</div>
+    </a>
+
+    <a href="beyond-security.html#enterprise-it" style="text-decoration:none;border:1px solid #e6ebf1;border-left:4px solid #D81E05;border-radius:12px;padding:18px 16px;background:#fff;transition:box-shadow .15s,transform .12s;display:block;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:#D81E05;text-transform:uppercase;margin-bottom:6px;">14 services</div>
+      <div style="font-size:16px;font-weight:700;color:#0D1B2A;margin-bottom:4px;">Enterprise IT</div>
+      <div style="font-size:13px;color:#5c6b7a;line-height:1.45;">Salesforce, SAP, .NET, Ruby, data, integration.</div>
+    </a>
+
+    <a href="beyond-security.html#app-studio" style="text-decoration:none;border:1px solid #e6ebf1;border-left:4px solid #F7941D;border-radius:12px;padding:18px 16px;background:#fff;transition:box-shadow .15s,transform .12s;display:block;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:#F7941D;text-transform:uppercase;margin-bottom:6px;">5 services</div>
+      <div style="font-size:16px;font-weight:700;color:#0D1B2A;margin-bottom:4px;">App Studio</div>
+      <div style="font-size:13px;color:#5c6b7a;line-height:1.45;">Native iOS and Android, cross-platform, backend.</div>
+    </a>
+
+    <a href="beyond-security.html#ai-studio" style="text-decoration:none;border:1px solid #e6ebf1;border-left:4px solid #0D1B2A;border-radius:12px;padding:18px 16px;background:#fff;transition:box-shadow .15s,transform .12s;display:block;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.5px;color:#0D1B2A;text-transform:uppercase;margin-bottom:6px;">9 services · flagship</div>
+      <div style="font-size:16px;font-weight:700;color:#0D1B2A;margin-bottom:4px;">AI Studio</div>
+      <div style="font-size:13px;color:#5c6b7a;line-height:1.45;">Agents, voice, chatbots, RAG, copilots.</div>
+    </a>
+
+  </div>
+
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <a href="beyond-security.html" style="display:inline-block;background:#1C86C9;color:#fff;padding:12px 24px;border-radius:9px;font-weight:600;font-size:14.5px;text-decoration:none;box-shadow:0 6px 18px rgba(28,134,201,.25);">
+      Explore all 36 services
+    </a>
+    <span style="font-size:13.5px;color:#5c6b7a;">
+      Synsera owns the client. Foxtcon One delivers, powered by Suvysoft. Same model, wider surface area.
+    </span>
+  </div>
+
+</section>
+<!-- ===================== END BEYOND SECURITY TEASER ===================== -->
+
+`;
+      return _rich;
+    }
     return '';
   }
   function closeMenu(){document.querySelector('.side').classList.remove('open');const sb=document.getElementById('sideback');sb.classList.remove('on');sb.setAttribute('aria-hidden','true');document.body.classList.remove('noscroll');const mb=document.getElementById('menubtn');if(mb){mb.setAttribute('aria-expanded','false');mb.setAttribute('aria-label','Open menu');mb.textContent='Menu';}}
@@ -915,7 +989,7 @@ function fxNorm(q){
     .replace(/fixed price/g,'fixed-price')
     .replace(/pre health/g,'pre-health')
     .replace(/net-rate/g,'net rate')
-    .replace(/[—–]/g,' ')
+    .replace(/['\u2019]/g,' ')
     .replace(/[^a-z0-9$'+\s.?-]/g,' ')
     .replace(/\s+/g,' ')+' ').trim();
 }
